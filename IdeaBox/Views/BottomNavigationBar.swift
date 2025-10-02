@@ -61,16 +61,7 @@ struct BottomNavigationBar: View {
         .padding(.horizontal, style.horizontalPadding)
         .padding(.vertical, style.verticalPadding)
         .frame(height: style.barHeight)
-        .background(
-            Group {
-                if reduceTransparency {
-                    Color.white.opacity(style.backgroundOpacity)
-                } else {
-                    Color.clear
-                }
-            }
-        )
-        .background(style.backgroundMaterial)
+        .background(Color.clear) // 完全透明
         .animation(
             reduceMotion ? .linear(duration: 0.1) : style.animationCurve,
             value: shouldShowTodayButton
