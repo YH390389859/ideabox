@@ -103,6 +103,20 @@ struct ContentView: View {
                 Spacer()
             }
             .background(Color.white)
+            .overlay(
+                // 底部渐变遮罩，让内容和导航栏过渡更自然
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.clear,
+                        Color.white.opacity(0.3)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 100)
+                .allowsHitTesting(false), // 不拦截触摸事件
+                alignment: .bottom
+            )
             
             // 底部导航栏（叠加在内容上方）
             VStack(spacing: 0) {
