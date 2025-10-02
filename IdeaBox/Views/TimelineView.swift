@@ -42,12 +42,12 @@ struct TimelineView: View {
                             )
                             .id("hour_\(hour)")
                         }
-                    }
-                    .padding(.horizontal, 10)
-                    .padding(.top, 10)
-                    .padding(.bottom, 100) // 额外底部空间，确保内容可以滚动到导航栏下方
                 }
-                .onAppear {
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
+                .padding(.bottom, 100) // 额外底部空间，防止内容被导航栏遮挡
+            }
+            .onAppear {
                     // 滚动到早上8点的位置
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         withAnimation {
@@ -57,17 +57,21 @@ struct TimelineView: View {
                 }
             }
             
-            // 底部固定渐变遮罩
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.clear,
-                    Color.white.opacity(0.8),
-                    Color.white
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: 120)
+            // 底部固定渐变遮罩（从最底部开始覆盖）
+            VStack(spacing: 0) {
+                Spacer()
+                
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.clear,
+                        Color.white.opacity(0.5),
+                        Color.white.opacity(0.8)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 120)
+            }
             .allowsHitTesting(false) // 不拦截触摸事件
         }
     }
