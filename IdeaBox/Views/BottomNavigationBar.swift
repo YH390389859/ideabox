@@ -71,20 +71,6 @@ struct BottomNavigationBar: View {
             }
         )
         .background(style.backgroundMaterial)
-        // 顶部渐变遮罩，让边界更柔和
-        .overlay(
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.black.opacity(0.02),
-                    Color.clear
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: 1)
-            .offset(y: -style.barHeight / 2),
-            alignment: .top
-        )
         .animation(
             reduceMotion ? .linear(duration: 0.1) : style.animationCurve,
             value: shouldShowTodayButton

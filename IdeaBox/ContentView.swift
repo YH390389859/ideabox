@@ -108,12 +108,13 @@ struct ContentView: View {
                 LinearGradient(
                     gradient: Gradient(colors: [
                         Color.clear,
-                        Color.white.opacity(0.3)
+                        Color.white.opacity(0.6),
+                        Color.white.opacity(0.9)
                     ]),
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                .frame(height: 100)
+                .frame(height: 180)
                 .allowsHitTesting(false), // 不拦截触摸事件
                 alignment: .bottom
             )
