@@ -43,9 +43,9 @@ struct TimelineView: View {
                     }
                 }
                 .padding(.horizontal, 10)
-                .padding(.vertical, 10)
+                .padding(.top, 10)
+                .padding(.bottom, 100) // 额外底部空间，确保内容可以滚动到导航栏下方
             }
-            .frame(height: 610)
             .onAppear {
                 // 滚动到早上8点的位置
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
