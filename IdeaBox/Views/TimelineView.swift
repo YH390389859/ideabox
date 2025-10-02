@@ -26,53 +26,34 @@ struct TimelineView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ScrollViewReader { proxy in
-                ScrollView(.vertical, showsIndicators: true) {
-                    VStack(spacing: 0) {
-                        // 每个时间段作为一个整体（左边时间 + 右边事件容器）
-                        ForEach(0..<24, id: \.self) { hour in
-                            TimeSlotRow(
-                                hour: hour,
-                                timeLabel: timeSlots[hour],
-                                events: eventsForHour(hour),
-                                minHeight: minHourHeight,
-                                eventCardHeight: eventCardHeight,
-                                eventSpacing: eventSpacing
-                            )
-                            .id("hour_\(hour)")
-                        }
+        ScrollViewReader { proxy in
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(spacing: 0) {
+                    // 每个时间段作为一个整体（左边时间 + 右边事件容器）
+                    ForEach(0..<24, id: \.self) { hour in
+                        TimeSlotRow(
+                            hour: hour,
+                            timeLabel: timeSlots[hour],
+                            events: eventsForHour(hour),
+                            minHeight: minHourHeight,
+                            eventCardHeight: eventCardHeight,
+                            eventSpacing: eventSpacing
+                        )
+                        .id("hour_\(hour)")
+                    }
                 }
                 .padding(.horizontal, 10)
                 .padding(.top, 10)
                 .padding(.bottom, 100) // 额外底部空间，防止内容被导航栏遮挡
             }
             .onAppear {
-                    // 滚动到早上8点的位置
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        withAnimation {
-                            proxy.scrollTo("hour_8", anchor: .top)
-                        }
+                // 滚动到早上8点的位置
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation {
+                        proxy.scrollTo("hour_8", anchor: .top)
                     }
                 }
             }
-            
-            // 底部固定渐变遮罩（从最底部开始覆盖）
-            VStack(spacing: 0) {
-                Spacer()
-                
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color.clear,
-                        Color.white.opacity(0.5),
-                        Color.white.opacity(0.8)
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 120)
-            }
-            .allowsHitTesting(false) // 不拦截触摸事件
         }
     }
 }

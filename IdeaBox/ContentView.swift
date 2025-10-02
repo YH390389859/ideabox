@@ -100,9 +100,25 @@ struct ContentView: View {
                 // 时间轴容器
                 TimelineView(events: events)
                 
-                Spacer()
             }
             .background(Color.white)
+            
+            // 底部渐变遮罩
+            VStack(spacing: 0) {
+                Spacer()
+                
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.clear,
+                        Color.white.opacity(0.5),
+                        Color.white.opacity(0.8)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 120)
+            }
+            .allowsHitTesting(false)
             
             // 底部导航栏（叠加在内容上方）
             VStack(spacing: 0) {
