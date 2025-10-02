@@ -43,18 +43,6 @@ struct BottomNavigationBar: View {
         !isTodaySelected
     }
     
-    /// 导航栏背景视图（兼容 iOS 15）
-    @ViewBuilder
-    private var navigationBackground: some View {
-        if reduceTransparency {
-            Color.white.opacity(style.backgroundOpacity)
-        } else {
-            // Material 需要应用到一个视图上
-            Rectangle()
-                .fill(style.backgroundMaterial)
-        }
-    }
-    
     // MARK: - Body
     
     var body: some View {
@@ -73,7 +61,16 @@ struct BottomNavigationBar: View {
         .padding(.horizontal, style.horizontalPadding)
         .padding(.vertical, style.verticalPadding)
         .frame(height: style.barHeight)
-        .background(navigationBackground)
+        .background(
+            Group {
+                if reduceTransparency {
+                    Color.white.opacity(style.backgroundOpacity)
+                } else {
+                    Color.clear
+                }
+            }
+        )
+        .background(style.backgroundMaterial)
         .animation(
             reduceMotion ? .linear(duration: 0.1) : style.animationCurve,
             value: shouldShowTodayButton
