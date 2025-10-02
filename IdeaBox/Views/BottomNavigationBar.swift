@@ -49,7 +49,9 @@ struct BottomNavigationBar: View {
         if reduceTransparency {
             Color.white.opacity(style.backgroundOpacity)
         } else {
-            style.backgroundMaterial
+            // Material 需要应用到一个视图上
+            Rectangle()
+                .fill(style.backgroundMaterial)
         }
     }
     
