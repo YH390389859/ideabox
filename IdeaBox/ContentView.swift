@@ -88,21 +88,20 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            VStack(spacing: 0) {
-                // 周日历（iOS 风格分页）
-                WeekCalendarView(selectedDate: $selectedDate)
-                
-                // 日期标题
-                DateHeaderView(selectedDate: selectedDate)
-                
-                // 时间轴容器
-                TimelineView(events: events)
-                
-                Spacer()
-            }
-            .background(Color.white)
+        VStack(spacing: 0) {
+            // 周日历（iOS 风格分页）
+            WeekCalendarView(selectedDate: $selectedDate)
             
+            // 日期标题
+            DateHeaderView(selectedDate: selectedDate)
+            
+            // 时间轴容器
+            TimelineView(events: events)
+            
+            Spacer()
+        }
+        .background(Color.white)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
             // 底部导航栏（智能显示"今天"按钮）
             BottomNavigationBar(
                 selectedDate: $selectedDate,
@@ -112,7 +111,6 @@ struct ContentView: View {
                 }
             )
         }
-        .ignoresSafeArea(edges: .bottom)
         .onChange(of: selectedDate) { _ in
             // 当选中日期变化时，可以在这里加载该日期的事件数据
         }
