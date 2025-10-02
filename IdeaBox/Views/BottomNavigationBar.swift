@@ -1,11 +1,36 @@
 import SwiftUI
 
 struct BottomNavigationBar: View {
+    // MARK: - Bindings
+    
     @Binding var selectedDate: Date
     @Binding var showingAddSheet: Bool
     let onTodayTapped: () -> Void
     
-    // MARK: - TodayButtonController Implementation
+    // MARK: - Environment
+    
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) var reduceTransparency
+    
+    // MARK: - Style & Adapter
+    
+    private let style = AppleNavigationBarStyle()
+    
+    private var adapter: AppearanceAdapter {
+        AppearanceAdapter()
+            .adaptToColorScheme(colorScheme)
+            .adaptToDynamicType(sizeCategory)
+            .adaptToReduceMotion(reduceMotion)
+    }
+    
+    // MARK: - Scaled Metrics
+    
+    @ScaledMetric private var iconSize: CGFloat = 22
+    @ScaledMetric private var buttonSize: CGFloat = 44
+    
+    // MARK: - Computed Properties
     
     /// 当前选中的日期是否是今天
     private var isTodaySelected: Bool {
@@ -18,70 +43,143 @@ struct BottomNavigationBar: View {
         !isTodaySelected
     }
     
+    // MARK: - Body
+    
     var body: some View {
-        HStack {
+        HStack(spacing: style.buttonSpacing) {
             // 今天按钮（条件显示）
             if shouldShowTodayButton {
-                Button(action: {
-                    onTodayTapped()
-                }) {
-                    Text("今天")
-                        .font(.system(size: 17))
-                        .foregroundColor(Color(hex: "007AFF"))
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.white)
-                        .cornerRadius(19)
-                        .shadow(color: Color.black.opacity(0.15), radius: 4, x: 0, y: 0)
-                }
-                .transition(.opacity)
+                todayButton
+                    .transition(reduceMotion ? .identity : .opacity)
             }
             
             Spacer()
             
             // 右侧按钮组
-            HStack(spacing: 12) {
-                // 添加按钮
-                Button(action: {
-                    showingAddSheet = true
-                }) {
-                    Text("+")
-                        .font(.system(size: 24, weight: .light))
-                        .foregroundColor(Color(hex: "007AFF"))
-                        .frame(width: 36, height: 36)
-                        .background(Color.white)
-                        .cornerRadius(18)
-                }
-                
-                // 我的按钮
-                Button(action: {
-                    // 导航到个人页面
-                }) {
-                    Text("👤")
-                        .font(.system(size: 20))
-                        .foregroundColor(Color(hex: "666666"))
-                        .frame(width: 36, height: 36)
-                        .background(Color(hex: "E6E6E6"))
-                        .cornerRadius(18)
-                }
-            }
-            .padding(10)
-            .background(Color.white)
-            .cornerRadius(19)
-            .shadow(color: Color.black.opacity(0.15), radius: 4, x: 0, y: 0)
+            actionButtons
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 25)
-        .frame(height: 84)
-        .background(Color.white.opacity(0.95))
-        .animation(.easeInOut(duration: 0.2), value: shouldShowTodayButton)
+        .padding(.horizontal, style.horizontalPadding)
+        .padding(.vertical, style.verticalPadding)
+        .frame(height: style.barHeight)
+        .background(
+            reduceTransparency ? 
+                Color.white.opacity(style.backgroundOpacity) : 
+                style.backgroundMaterial
+        )
+        .animation(
+            reduceMotion ? .linear(duration: 0.1) : style.animationCurve,
+            value: shouldShowTodayButton
+        )
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("底部导航栏")
+    }
+    
+    // MARK: - Subviews
+    
+    /// 今天按钮
+    private var todayButton: some View {
+        Button(action: {
+            HapticManager.shared.trigger(.medium)
+            onTodayTapped()
+        }) {
+            HStack(spacing: 6) {
+                Image(systemName: "calendar.badge.clock")
+                    .font(.system(size: iconSize))
+                Text("今天")
+                    .font(.body)
+            }
+            .foregroundColor(style.accentColor)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(style.buttonBackgroundColor)
+            .cornerRadius(style.buttonCornerRadius)
+            .shadow(
+                color: style.shadowColor,
+                radius: style.shadowRadius,
+                x: style.shadowOffset.width,
+                y: style.shadowOffset.height
+            )
+        }
+        .frame(minWidth: buttonSize, minHeight: buttonSize)
+        .accessibilityLabel("今天按钮")
+        .accessibilityHint("轻点两下跳转到今天")
+    }
+    
+    /// 右侧操作按钮组
+    private var actionButtons: some View {
+        HStack(spacing: style.buttonSpacing) {
+            // 添加按钮
+            Button(action: {
+                HapticManager.shared.trigger(.medium)
+                showingAddSheet = true
+            }) {
+                Image(systemName: "plus.circle.fill")
+                    .font(.system(size: iconSize))
+                    .foregroundColor(style.accentColor)
+                    .frame(width: buttonSize, height: buttonSize)
+            }
+            .accessibilityLabel("添加按钮")
+            .accessibilityHint("轻点两下创建新事项")
+            
+            // 个人中心按钮
+            Button(action: {
+                HapticManager.shared.trigger(.light)
+                // 导航到个人页面
+            }) {
+                Image(systemName: "person.crop.circle.fill")
+                    .font(.system(size: iconSize))
+                    .foregroundColor(.secondary)
+                    .frame(width: buttonSize, height: buttonSize)
+            }
+            .accessibilityLabel("个人中心按钮")
+            .accessibilityHint("轻点两下查看个人信息")
+        }
+        .padding(10)
+        .background(style.buttonBackgroundColor)
+        .cornerRadius(style.buttonCornerRadius)
+        .shadow(
+            color: style.shadowColor,
+            radius: style.shadowRadius,
+            x: style.shadowOffset.width,
+            y: style.shadowOffset.height
+        )
     }
 }
 
-#Preview {
+// MARK: - Previews
+
+#Preview("Standard - Light Mode") {
     BottomNavigationBar(
         selectedDate: .constant(Date()),
         showingAddSheet: .constant(false),
         onTodayTapped: {}
     )
+    .preferredColorScheme(.light)
+}
+
+#Preview("Today Button Visible") {
+    BottomNavigationBar(
+        selectedDate: .constant(Calendar.current.date(byAdding: .day, value: 1, to: Date())!),
+        showingAddSheet: .constant(false),
+        onTodayTapped: {}
+    )
+    .preferredColorScheme(.light)
+}
+
+#Preview("Dark Mode") {
+    BottomNavigationBar(
+        selectedDate: .constant(Date()),
+        showingAddSheet: .constant(false),
+        onTodayTapped: {}
+    )
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Large Font") {
+    BottomNavigationBar(
+        selectedDate: .constant(Date()),
+        showingAddSheet: .constant(false),
+        onTodayTapped: {}
+    )
+    .environment(\.sizeCategory, .extraExtraExtraLarge)
 }
