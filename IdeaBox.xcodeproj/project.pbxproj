@@ -7,27 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09152E8F4B78DF08B6DCAC87 /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */; };
+		3DCAB0572E8E6A6D000DB6B9 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */; };
+		3DCAB0582E8E6A6D000DB6B9 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */; };
+		3DCAB05B2E8E6A7D000DB6B9 /* AppearanceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */; };
+		3DCAB05C2E8E6A7D000DB6B9 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB05A2E8E6A7D000DB6B9 /* HapticManager.swift */; };
+		3DCAB0622E8E6B08000DB6B9 /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB05F2E8E6B08000DB6B9 /* Color+AppColors.swift */; };
+		3DCAB0632E8E6B08000DB6B9 /* View+Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0602E8E6B08000DB6B9 /* View+Haptics.swift */; };
+		3DCAB0662E8E6B1B000DB6B9 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0642E8E6B1B000DB6B9 /* NavigationBarStyle.swift */; };
+		4669A8B6E034A9C1AA1FE000 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4EA0F47F1EF449725CA88 /* EventCardView.swift */; };
 		A1000001000000000000001 /* IdeaBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000001 /* IdeaBoxApp.swift */; };
 		A1000003000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004000000000000001 /* ContentView.swift */; };
 		A1000005000000000000001 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006000000000000001 /* EventItem.swift */; };
 		A1000007000000000000001 /* DayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008000000000000001 /* DayItem.swift */; };
 		A1000008100000000000001 /* WeekData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008200000000000001 /* WeekData.swift */; };
 		A1000009000000000000001 /* WeekCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000000000000001 /* WeekCalendarView.swift */; };
-		A1000011000000000000001 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012000000000000001 /* DateHeaderView.swift */; };
-		A1000013000000000000001 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014000000000000001 /* TimelineView.swift */; };
 		A1000015000000000000001 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016000000000000001 /* BottomNavigationBar.swift */; };
 		A1000017000000000000001 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018000000000000001 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11F4EA0F47F1EF449725CA88 /* EventCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
+		3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceAdapter.swift; sourceTree = "<group>"; };
+		3DCAB05A2E8E6A7D000DB6B9 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		3DCAB05F2E8E6B08000DB6B9 /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
+		3DCAB0602E8E6B08000DB6B9 /* View+Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptics.swift"; sourceTree = "<group>"; };
+		3DCAB0642E8E6B1B000DB6B9 /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
 		A1000002000000000000001 /* IdeaBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBoxApp.swift; sourceTree = "<group>"; };
 		A1000004000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1000006000000000000001 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		A1000008000000000000001 /* DayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayItem.swift; sourceTree = "<group>"; };
 		A1000008200000000000001 /* WeekData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekData.swift; sourceTree = "<group>"; };
 		A1000010000000000000001 /* WeekCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendarView.swift; sourceTree = "<group>"; };
-		A1000012000000000000001 /* DateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderView.swift; sourceTree = "<group>"; };
-		A1000014000000000000001 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		A1000016000000000000001 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		A1000018000000000000001 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		A1000020000000000000001 /* 收藏日历.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "收藏日历.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DCAB0612E8E6B08000DB6B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB05F2E8E6B08000DB6B9 /* Color+AppColors.swift */,
+				3DCAB0602E8E6B08000DB6B9 /* View+Haptics.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DCAB0652E8E6B1B000DB6B9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB0642E8E6B1B000DB6B9 /* NavigationBarStyle.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		A1000050000000000000001 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +87,7 @@
 		A1000060000000000000001 /* IdeaBox */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAB0612E8E6B08000DB6B9 /* Extensions */,
 				A1000002000000000000001 /* IdeaBoxApp.swift */,
 				A1000004000000000000001 /* ContentView.swift */,
 				A1000080000000000000001 /* Models */,
@@ -77,6 +109,8 @@
 		A1000080000000000000001 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */,
+				3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */,
 				A1000006000000000000001 /* EventItem.swift */,
 				A1000008000000000000001 /* DayItem.swift */,
 				A1000008200000000000001 /* WeekData.swift */,
@@ -87,10 +121,11 @@
 		A1000090000000000000001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAB0652E8E6B1B000DB6B9 /* Navigation */,
 				A1000010000000000000001 /* WeekCalendarView.swift */,
-				A1000012000000000000001 /* DateHeaderView.swift */,
-				A1000014000000000000001 /* TimelineView.swift */,
 				A1000016000000000000001 /* BottomNavigationBar.swift */,
+				340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */,
+				11F4EA0F47F1EF449725CA88 /* EventCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +133,8 @@
 		A1000095000000000000001 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */,
+				3DCAB05A2E8E6A7D000DB6B9 /* HapticManager.swift */,
 				A1000018000000000000001 /* DateHelper.swift */,
 			);
 			path = Helpers;
@@ -172,15 +209,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000001000000000000001 /* IdeaBoxApp.swift in Sources */,
+				3DCAB0572E8E6A6D000DB6B9 /* NavigationState.swift in Sources */,
+				3DCAB0582E8E6A6D000DB6B9 /* NavigationItem.swift in Sources */,
 				A1000003000000000000001 /* ContentView.swift in Sources */,
+				3DCAB05B2E8E6A7D000DB6B9 /* AppearanceAdapter.swift in Sources */,
+				3DCAB0662E8E6B1B000DB6B9 /* NavigationBarStyle.swift in Sources */,
+				3DCAB05C2E8E6A7D000DB6B9 /* HapticManager.swift in Sources */,
 				A1000005000000000000001 /* EventItem.swift in Sources */,
 				A1000007000000000000001 /* DayItem.swift in Sources */,
 				A1000008100000000000001 /* WeekData.swift in Sources */,
 				A1000009000000000000001 /* WeekCalendarView.swift in Sources */,
-				A1000011000000000000001 /* DateHeaderView.swift in Sources */,
-				A1000013000000000000001 /* TimelineView.swift in Sources */,
+				3DCAB0622E8E6B08000DB6B9 /* Color+AppColors.swift in Sources */,
+				3DCAB0632E8E6B08000DB6B9 /* View+Haptics.swift in Sources */,
 				A1000015000000000000001 /* BottomNavigationBar.swift in Sources */,
 				A1000017000000000000001 /* DateHelper.swift in Sources */,
+				09152E8F4B78DF08B6DCAC87 /* MonthCalendarView.swift in Sources */,
+				4669A8B6E034A9C1AA1FE000 /* EventCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +369,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +398,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,181 +1,210 @@
 import SwiftUI
 
+/// 底部导航项枚举
+enum NavigationTab {
+    case calendar
+    case search
+    case add // 中央按钮
+    case notifications
+    case profile
+}
+
 struct BottomNavigationBar: View {
-    // MARK: - Bindings
-    
-    @Binding var selectedDate: Date
+    @Binding var selectedTab: NavigationTab
     @Binding var showingAddSheet: Bool
-    let onTodayTapped: () -> Void
-    
-    // MARK: - Environment
-    
-    @Environment(\.colorScheme) var colorScheme
-    @Environment(\.sizeCategory) var sizeCategory
-    @Environment(\.accessibilityReduceMotion) var reduceMotion
-    @Environment(\.accessibilityReduceTransparency) var reduceTransparency
-    
-    // MARK: - Style & Adapter
-    
-    private let style = AppleNavigationBarStyle()
-    
-    private var adapter: AppearanceAdapter {
-        AppearanceAdapter()
-            .adaptToColorScheme(colorScheme)
-            .adaptToDynamicType(sizeCategory)
-            .adaptToReduceMotion(reduceMotion)
-    }
-    
-    // MARK: - Scaled Metrics
-    
-    @ScaledMetric private var iconSize: CGFloat = 22
-    @ScaledMetric private var buttonSize: CGFloat = 44
-    
-    // MARK: - Computed Properties
-    
-    /// 当前选中的日期是否是今天
-    private var isTodaySelected: Bool {
-        Calendar.current.isDateInToday(selectedDate)
-    }
-    
-    /// 是否应该显示"今天"按钮
-    /// 规则：选中今天时隐藏，选中其他日期时显示
-    private var shouldShowTodayButton: Bool {
-        !isTodaySelected
-    }
-    
-    // MARK: - Body
     
     var body: some View {
-        HStack(spacing: style.buttonSpacing) {
-            // 今天按钮（条件显示）
-            if shouldShowTodayButton {
-                todayButton
-                    .transition(reduceMotion ? .identity : .opacity)
+        ZStack {
+            // 底部白色背景容器
+            VStack(spacing: 0) {
+                // 顶部分隔线
+                Rectangle()
+                    .fill(Color(hex: "CED3DE").opacity(0.5))
+                    .frame(height: 0.5)
+                
+                // 导航栏内容
+                HStack(spacing: 0) {
+                    // 日历图标
+                    navButton(
+                        icon: "calendar",
+                        tab: .calendar,
+                        isSelected: selectedTab == .calendar
+                    )
+                    
+                    Spacer()
+                    
+                    // 搜索图标
+                    navButton(
+                        icon: "magnifyingglass",
+                        tab: .search,
+                        isSelected: selectedTab == .search
+                    )
+                    
+                    Spacer()
+                    
+                    // 中央占位（为浮动按钮留空）
+                    Color.clear
+                        .frame(width: 60)
+                    
+                    Spacer()
+                    
+                    // 通知图标
+                    navButton(
+                        icon: "bell",
+                        tab: .notifications,
+                        isSelected: selectedTab == .notifications
+                    )
+                    
+                    Spacer()
+                    
+                    // 个人中心图标
+                    navButton(
+                        icon: "person",
+                        tab: .profile,
+                        isSelected: selectedTab == .profile
+                    )
+                }
+                .padding(.horizontal, 26)
+                .padding(.vertical, 12)
+                .frame(height: 64)
             }
-            
-            Spacer()
-            
-            // 右侧按钮组
-            actionButtons
-        }
-        .padding(.horizontal, style.horizontalPadding)
-        .padding(.vertical, style.verticalPadding)
-        .frame(height: style.barHeight)
-        .background(Color.clear) // 完全透明
-        .animation(
-            reduceMotion ? .linear(duration: 0.1) : style.animationCurve,
-            value: shouldShowTodayButton
-        )
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel("底部导航栏")
-    }
-    
-    // MARK: - Subviews
-    
-    /// 今天按钮
-    private var todayButton: some View {
-        Button(action: {
-            HapticManager.shared.trigger(.medium)
-            onTodayTapped()
-        }) {
-            HStack(spacing: 6) {
-                Image(systemName: "calendar.badge.clock")
-                    .font(.system(size: iconSize))
-                Text("今天")
-                    .font(.body)
-            }
-            .foregroundColor(style.accentColor)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
-            .background(style.buttonBackgroundColor)
-            .cornerRadius(style.buttonCornerRadius)
-            .shadow(
-                color: style.shadowColor,
-                radius: style.shadowRadius,
-                x: style.shadowOffset.width,
-                y: style.shadowOffset.height
+            .background(
+                ZStack {
+                    // 底部白色背景
+                    Color.white
+                    
+                    // 顶部圆角效果（使用自定义形状）
+                    TopRoundedRectangle(radius: 24)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.08), radius: 15, x: 0, y: -3)
+                }
             )
+            
+            // 中央浮动添加按钮
+            VStack {
+                Button(action: {
+                    showingAddSheet = true
+                }) {
+                    ZStack {
+                        // 外圈阴影
+                        Circle()
+                            .fill(Color(hex: "735BF2"))
+                            .frame(width: 51, height: 51)
+                            .shadow(color: Color.black.opacity(0.08), radius: 15, x: 0, y: 3)
+                        
+                        // 加号图标
+                        Image(systemName: "plus")
+                            .font(.system(size: 24, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                }
+                .offset(y: -5) // 向上偏移，让按钮浮动
+                
+                Spacer()
+            }
         }
-        .frame(minWidth: buttonSize, minHeight: buttonSize)
-        .accessibilityLabel("今天按钮")
-        .accessibilityHint("轻点两下跳转到今天")
+        .frame(height: 92)
     }
     
-    /// 右侧操作按钮组
-    private var actionButtons: some View {
-        HStack(spacing: style.buttonSpacing) {
-            // 添加按钮
-            Button(action: {
-                HapticManager.shared.trigger(.medium)
-                showingAddSheet = true
-            }) {
-                Image(systemName: "plus.circle.fill")
-                    .font(.system(size: iconSize))
-                    .foregroundColor(style.accentColor)
-                    .frame(width: buttonSize, height: buttonSize)
-            }
-            .accessibilityLabel("添加按钮")
-            .accessibilityHint("轻点两下创建新事项")
-            
-            // 个人中心按钮
-            Button(action: {
-                HapticManager.shared.trigger(.light)
-                // 导航到个人页面
-            }) {
-                Image(systemName: "person.crop.circle.fill")
-                    .font(.system(size: iconSize))
-                    .foregroundColor(.secondary)
-                    .frame(width: buttonSize, height: buttonSize)
-            }
-            .accessibilityLabel("个人中心按钮")
-            .accessibilityHint("轻点两下查看个人信息")
+    private func navButton(icon: String, tab: NavigationTab, isSelected: Bool) -> some View {
+        Button(action: {
+            selectedTab = tab
+        }) {
+            Image(systemName: icon)
+                .font(.system(size: 18, weight: .medium))
+                .foregroundColor(isSelected ? Color(hex: "735BF2") : Color(hex: "8F9BB3"))
+                .frame(width: 44, height: 44)
         }
-        .padding(10)
-        .background(style.buttonBackgroundColor)
-        .cornerRadius(style.buttonCornerRadius)
-        .shadow(
-            color: style.shadowColor,
-            radius: style.shadowRadius,
-            x: style.shadowOffset.width,
-            y: style.shadowOffset.height
+    }
+}
+
+/// 顶部圆角矩形（用于导航栏）
+struct TopRoundedRectangle: Shape {
+    let radius: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        // 从左上角开始
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY + radius))
+        
+        // 左上圆角
+        path.addArc(
+            center: CGPoint(x: rect.minX + radius, y: rect.minY + radius),
+            radius: radius,
+            startAngle: .degrees(180),
+            endAngle: .degrees(270),
+            clockwise: false
         )
+        
+        // 顶部直线到右上角
+        path.addLine(to: CGPoint(x: rect.maxX - radius, y: rect.minY))
+        
+        // 右上圆角
+        path.addArc(
+            center: CGPoint(x: rect.maxX - radius, y: rect.minY + radius),
+            radius: radius,
+            startAngle: .degrees(270),
+            endAngle: .degrees(0),
+            clockwise: false
+        )
+        
+        // 右侧直线
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        
+        // 底部直线
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        // 左侧直线回到起点
+        path.closeSubpath()
+        
+        return path
     }
 }
 
 // MARK: - Previews
 
 #Preview("Standard - Light Mode") {
-    BottomNavigationBar(
-        selectedDate: .constant(Date()),
-        showingAddSheet: .constant(false),
-        onTodayTapped: {}
-    )
+    ZStack {
+        Color.gray.opacity(0.1).ignoresSafeArea()
+        
+        VStack {
+            Spacer()
+            BottomNavigationBar(
+                selectedTab: .constant(.calendar),
+                showingAddSheet: .constant(false)
+            )
+        }
+    }
     .preferredColorScheme(.light)
 }
 
-#Preview("Today Button Visible") {
-    BottomNavigationBar(
-        selectedDate: .constant(Calendar.current.date(byAdding: .day, value: 1, to: Date())!),
-        showingAddSheet: .constant(false),
-        onTodayTapped: {}
-    )
+#Preview("Search Tab Selected") {
+    ZStack {
+        Color.gray.opacity(0.1).ignoresSafeArea()
+        
+        VStack {
+            Spacer()
+            BottomNavigationBar(
+                selectedTab: .constant(.search),
+                showingAddSheet: .constant(false)
+            )
+        }
+    }
     .preferredColorScheme(.light)
 }
 
 #Preview("Dark Mode") {
-    BottomNavigationBar(
-        selectedDate: .constant(Date()),
-        showingAddSheet: .constant(false),
-        onTodayTapped: {}
-    )
+    ZStack {
+        Color.gray.opacity(0.1).ignoresSafeArea()
+        
+        VStack {
+            Spacer()
+            BottomNavigationBar(
+                selectedTab: .constant(.calendar),
+                showingAddSheet: .constant(false)
+            )
+        }
+    }
     .preferredColorScheme(.dark)
-}
-
-#Preview("Large Font") {
-    BottomNavigationBar(
-        selectedDate: .constant(Date()),
-        showingAddSheet: .constant(false),
-        onTodayTapped: {}
-    )
-    .environment(\.sizeCategory, .extraExtraExtraLarge)
 }
