@@ -69,9 +69,12 @@ enum AuthError: Error {
     /// 从 Firebase Auth Error 映射
     init(from firebaseError: Error) {
         let nsError = firebaseError as NSError
-        let code = AuthErrorCode(_nsError: nsError)
+        guard let code = AuthErrorCode(rawValue: nsError.code) else {
+            self = .unknown(firebaseError)
+            return
+        }
         
-        switch code.code {
+        switch code {
         case .invalidEmail:
             self = .invalidEmail
         case .emailAlreadyInUse:

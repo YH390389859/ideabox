@@ -93,7 +93,7 @@ final class UserSessionManager: UserSessionManagerProtocol {
         
         do {
             // 强制刷新 Firebase ID Token
-            let newToken = try await currentUser.getIDTokenForcingRefresh(true)
+            let newToken = try await currentUser.getIDToken(forcingRefresh: true)
             
             // 更新会话
             var refreshedSession = session

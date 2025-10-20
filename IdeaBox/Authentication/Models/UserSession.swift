@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// 用户会话模型
 struct UserSession: Codable, Equatable {
