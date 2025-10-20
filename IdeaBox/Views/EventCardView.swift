@@ -5,9 +5,30 @@ struct EventCardView: View {
     let event: EventItem
     
     var body: some View {
-        HStack(spacing: 0) {
-            // 左侧彩色时间标签
-            timeLabel
+        VStack(alignment: .leading, spacing: 0) {
+            // 时间标签（顶部）
+            HStack {
+                timeLabel
+                
+                Spacer()
+                
+                // 菜单按钮
+                Button(action: {
+                    // TODO: 显示菜单选项
+                }) {
+                    VStack(spacing: 2) {
+                        ForEach(0..<3) { _ in
+                            Circle()
+                                .fill(Color(hex: "8F9BB3"))
+                                .frame(width: 3, height: 3)
+                        }
+                    }
+                    .padding(8)
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            .padding(.top, 12)
+            .padding(.trailing, 14)
             
             // 主要内容区域
             VStack(alignment: .leading, spacing: 8) {
@@ -24,28 +45,18 @@ struct EventCardView: View {
                         .foregroundColor(Color(hex: "8F9BB3"))
                         .lineLimit(2)
                 }
-                
-                Spacer()
             }
-            .padding(.leading, 14)
-            .padding(.trailing, 14)
-            .padding(.vertical, 12)
-            
-            Spacer()
-            
-            // 右侧菜单按钮
-            menuButton
+            .padding(.horizontal, 14)
+            .padding(.bottom, 12)
         }
-        .frame(height: 95)
+        .frame(minHeight: 95)
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.06), radius: 15, x: 0, y: 3)
     }
     
     private var timeLabel: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            
+        HStack(spacing: 6) {
             // 时钟图标
             ZStack {
                 Circle()
@@ -57,41 +68,14 @@ struct EventCardView: View {
                     .stroke(event.colorType.color.opacity(0.3), lineWidth: 1.2)
                     .frame(width: 10, height: 10)
             }
-            .padding(.bottom, 2)
             
-            // 时间文本
+            // 时间文本（水平显示）
             Text(event.timeRange)
                 .font(.system(size: 12, weight: .semibold))
                 .foregroundColor(Color(hex: "8F9BB3"))
-                .rotationEffect(.degrees(-90))
                 .fixedSize()
-            
-            Spacer()
         }
-        .frame(width: 14)
         .padding(.leading, 14)
-    }
-    
-    private var menuButton: some View {
-        VStack(spacing: 0) {
-            Button(action: {
-                // TODO: 显示菜单选项
-            }) {
-                VStack(spacing: 2) {
-                    ForEach(0..<3) { _ in
-                        Circle()
-                            .fill(Color(hex: "8F9BB3"))
-                            .frame(width: 3, height: 3)
-                    }
-                }
-                .padding(8)
-            }
-            .buttonStyle(PlainButtonStyle())
-            
-            Spacer()
-        }
-        .padding(.trailing, 14)
-        .padding(.top, 16)
     }
 }
 
@@ -100,17 +84,14 @@ struct EventListView: View {
     let events: [EventItem]
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                ForEach(events) { event in
-                    EventCardView(event: event)
-                }
+        VStack(spacing: 16) {
+            ForEach(events) { event in
+                EventCardView(event: event)
             }
-            .padding(.horizontal, 17)
-            .padding(.top, 16)
-            .padding(.bottom, 120) // 为底部导航栏留出空间
         }
-        .background(Color.white)
+        .padding(.horizontal, 17)
+        .padding(.top, 16)
+        .padding(.bottom, 120) // 为底部导航栏留出空间
     }
 }
 

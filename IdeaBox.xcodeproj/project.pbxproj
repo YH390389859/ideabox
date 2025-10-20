@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		336638626665663861666230 /* CalendarViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326633626563623739323936 /* CalendarViewMode.swift */; };
-		316433323764303861303735 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */; };
-		633031613639376335356664 /* CollapsibleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396161316461323637366465 /* CollapsibleCalendarView.swift */; };
 		09152E8F4B78DF08B6DCAC87 /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */; };
+		316433323764303861303735 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */; };
+		336638626665663861666230 /* CalendarViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326633626563623739323936 /* CalendarViewMode.swift */; };
 		3DCAB0572E8E6A6D000DB6B9 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */; };
 		3DCAB0582E8E6A6D000DB6B9 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */; };
 		3DCAB05B2E8E6A7D000DB6B9 /* AppearanceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */; };
@@ -19,6 +18,7 @@
 		3DCAB0632E8E6B08000DB6B9 /* View+Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0602E8E6B08000DB6B9 /* View+Haptics.swift */; };
 		3DCAB0662E8E6B1B000DB6B9 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0642E8E6B1B000DB6B9 /* NavigationBarStyle.swift */; };
 		4669A8B6E034A9C1AA1FE000 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4EA0F47F1EF449725CA88 /* EventCardView.swift */; };
+		633031613639376335356664 /* CollapsibleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396161316461323637366465 /* CollapsibleCalendarView.swift */; };
 		A1000001000000000000001 /* IdeaBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000001 /* IdeaBoxApp.swift */; };
 		A1000003000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004000000000000001 /* ContentView.swift */; };
 		A1000005000000000000001 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006000000000000001 /* EventItem.swift */; };
@@ -30,11 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11F4EA0F47F1EF449725CA88 /* EventCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		326633626563623739323936 /* CalendarViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewMode.swift; sourceTree = "<group>"; };
+		340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
 		366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		396161316461323637366465 /* CollapsibleCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleCalendarView.swift; sourceTree = "<group>"; };
-		11F4EA0F47F1EF449725CA88 /* EventCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
-		340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
 		3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
 		3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceAdapter.swift; sourceTree = "<group>"; };
