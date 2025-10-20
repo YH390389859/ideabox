@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336638626665663861666230 /* CalendarViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326633626563623739323936 /* CalendarViewMode.swift */; };
+		316433323764303861303735 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */; };
+		633031613639376335356664 /* CollapsibleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396161316461323637366465 /* CollapsibleCalendarView.swift */; };
 		09152E8F4B78DF08B6DCAC87 /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */; };
 		3DCAB0572E8E6A6D000DB6B9 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0562E8E6A6D000DB6B9 /* NavigationState.swift */; };
 		3DCAB0582E8E6A6D000DB6B9 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		326633626563623739323936 /* CalendarViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewMode.swift; sourceTree = "<group>"; };
+		366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		396161316461323637366465 /* CollapsibleCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleCalendarView.swift; sourceTree = "<group>"; };
 		11F4EA0F47F1EF449725CA88 /* EventCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
 		3DCAB0552E8E6A6D000DB6B9 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				A1000006000000000000001 /* EventItem.swift */,
 				A1000008000000000000001 /* DayItem.swift */,
 				A1000008200000000000001 /* WeekData.swift */,
+				326633626563623739323936 /* CalendarViewMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 				A1000016000000000000001 /* BottomNavigationBar.swift */,
 				340292EDF0ADFC362B3B3AE0 /* MonthCalendarView.swift */,
 				11F4EA0F47F1EF449725CA88 /* EventCardView.swift */,
+				396161316461323637366465 /* CollapsibleCalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 				3DCAB0592E8E6A7D000DB6B9 /* AppearanceAdapter.swift */,
 				3DCAB05A2E8E6A7D000DB6B9 /* HapticManager.swift */,
 				A1000018000000000000001 /* DateHelper.swift */,
+				366133356164316562643063 /* ScrollOffsetPreferenceKey.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,6 +234,9 @@
 				A1000017000000000000001 /* DateHelper.swift in Sources */,
 				09152E8F4B78DF08B6DCAC87 /* MonthCalendarView.swift in Sources */,
 				4669A8B6E034A9C1AA1FE000 /* EventCardView.swift in Sources */,
+				633031613639376335356664 /* CollapsibleCalendarView.swift in Sources */,
+				316433323764303861303735 /* ScrollOffsetPreferenceKey.swift in Sources */,
+				336638626665663861666230 /* CalendarViewMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

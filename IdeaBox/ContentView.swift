@@ -4,9 +4,31 @@ struct ContentView: View {
     @State private var selectedDate = Date()
     @State private var showingAddSheet = false
     @State private var selectedTab: NavigationTab = .calendar
+    @State private var calendarViewMode: CalendarViewMode = .month
+    @State private var scrollOffset: CGFloat = 0
+    @State private var isTransitioning: Bool = false // 标记正在进行视图切换
+    
+    // 滚动阈值（向上滚动多少距离后触发收缩）
+    private let scrollThreshold: CGFloat = 50
     
     // 示例事件数据（匹配 Figma 设计）
     let events: [EventItem] = [
+        EventItem(
+            title: "Design new UX flow for Michael",
+            description: "Start from screen 16",
+            startTime: "10:00",
+            endTime: "13:00",
+            colorType: .green,
+            date: Date()
+        ),
+        EventItem(
+            title: "Design new UX flow for Michael",
+            description: "Start from screen 16",
+            startTime: "10:00",
+            endTime: "13:00",
+            colorType: .green,
+            date: Date()
+        ),
         EventItem(
             title: "Design new UX flow for Michael",
             description: "Start from screen 16",
@@ -37,8 +59,11 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             // 主内容区域
             VStack(spacing: 0) {
-                // 月历网格视图
-                MonthCalendarView(selectedDate: $selectedDate)
+                // 可折叠的日历视图
+                CollapsibleCalendarView(
+                    selectedDate: $selectedDate,
+                    viewMode: $calendarViewMode
+                )
                 
                 // 分隔线
                 Rectangle()
@@ -46,8 +71,21 @@ struct ContentView: View {
                     .frame(height: 4)
                     .padding(.horizontal, 178)
                 
-                // 事件列表
-                EventListView(events: events)
+                // 带滚动监听的事件列表
+                ScrollView {
+                    VStack(spacing: 0) {
+                        // 滚动偏移检测器（放在最顶部）
+                        Color.clear
+                            .frame(height: 0)
+                            .onScrollOffsetChange { offset in
+                                handleScrollOffset(offset)
+                            }
+                        
+                        EventListView(events: events)
+                    }
+                }
+                .scrollDisabled(isTransitioning) // 在视图切换时禁用滚动
+                .coordinateSpace(name: "scroll")
             }
             .background(Color.white)
             
@@ -67,6 +105,40 @@ struct ContentView: View {
             Text("Add Event Sheet")
                 .presentationDetents([.medium])
         }
+    }
+    
+    /// 处理滚动偏移，根据滚动方向和位置切换日历视图模式
+    private func handleScrollOffset(_ offset: CGFloat) {
+        // 如果正在进行视图切换，忽略滚动偏移变化，避免抖动
+        guard !isTransitioning else {
+            return
+        }
+        
+        // 向上滚动时，offset 变成负数（越滚越小）
+        // 当滚动超过阈值时，切换到周视图
+        if offset < -scrollThreshold && calendarViewMode == .month {
+            isTransitioning = true
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                calendarViewMode = .week
+            }
+            // 动画完成后重置标志
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                isTransitioning = false
+            }
+        }
+        // 向下滚动回到顶部时（offset 接近 0），切换回月视图
+        else if offset > -10 && calendarViewMode == .week {
+            isTransitioning = true
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                calendarViewMode = .month
+            }
+            // 动画完成后重置标志
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                isTransitioning = false
+            }
+        }
+        
+        scrollOffset = offset
     }
 }
 

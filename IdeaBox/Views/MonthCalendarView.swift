@@ -26,6 +26,9 @@ struct MonthCalendarView: View {
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     
+    // 可用宽度（从 GeometryReader 获取）
+    @State private var availableWidth: CGFloat = 400
+    
     @Environment(\.accessibilityReduceMotion) var reduceMotion
     
     private let calendar = Calendar.current
@@ -45,21 +48,21 @@ struct MonthCalendarView: View {
         calendar.isDate(date, equalTo: displayedMonth, toGranularity: .month)
     }
     
-    /// 当前月份的偏移量（动画偏移 + 拖动偏移）
+    /// 当前月份的偏移量（动画偏移 + 拖动偏移）- 横向
     private var currentMonthOffset: CGFloat {
         return animationOffset + dragOffset
     }
     
-    /// 是否应该显示上一个月
+    /// 是否应该显示上一个月（左侧）
     private var shouldShowPreviousMonth: Bool {
         return (transitionDirection == .previous && isAnimating) || 
-               (isDragging && dragOffset > 0)
+               (isDragging && dragOffset > 0) // 向右拖动显示左边的月份
     }
     
-    /// 是否应该显示下一个月
+    /// 是否应该显示下一个月（右侧）
     private var shouldShowNextMonth: Bool {
         return (transitionDirection == .next && isAnimating) || 
-               (isDragging && dragOffset < 0)
+               (isDragging && dragOffset < 0) // 向左拖动显示右边的月份
     }
     
     /// 判断日期是否有事件（这里先用示例数据）
@@ -89,52 +92,59 @@ struct MonthCalendarView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            // 月份标题和导航
-            monthHeader
-            
-            // 星期标题
-            weekdayHeader
-            
-            // 日期网格容器 - 使用 ZStack 叠加当前月和过渡月
-            ZStack {
-                // 当前显示的月份（使用缓存数据）
-                cachedMonthGridView(days: cachedCurrentMonthDays, month: displayedMonth)
-                    .offset(y: currentMonthOffset)
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                // 月份标题和导航
+                monthHeader
                 
-                // 上一个月（在动画或拖动时显示，使用缓存数据）
-                if shouldShowPreviousMonth, let prevMonth = previousMonthDate {
-                    cachedMonthGridView(days: cachedPreviousMonthDays, month: prevMonth)
-                        .offset(y: currentMonthOffset - calendarHeight)
+                // 星期标题
+                weekdayHeader
+                
+                // 日期网格容器 - 使用 ZStack 叠加当前月和过渡月（左右滑动）
+                ZStack {
+                    // 当前显示的月份（使用缓存数据）
+                    cachedMonthGridView(days: cachedCurrentMonthDays, month: displayedMonth)
+                        .offset(x: currentMonthOffset)
+                    
+                    // 上一个月（在动画或拖动时显示在左侧，使用缓存数据）
+                    if shouldShowPreviousMonth, let prevMonth = previousMonthDate {
+                        cachedMonthGridView(days: cachedPreviousMonthDays, month: prevMonth)
+                            .offset(x: currentMonthOffset - geometry.size.width)
+                    }
+                    
+                    // 下一个月（在动画或拖动时显示在右侧，使用缓存数据）
+                    if shouldShowNextMonth, let nextMonth = nextMonthDate {
+                        cachedMonthGridView(days: cachedNextMonthDays, month: nextMonth)
+                            .offset(x: currentMonthOffset + geometry.size.width)
+                    }
                 }
-                
-                // 下一个月（在动画或拖动时显示，使用缓存数据）
-                if shouldShowNextMonth, let nextMonth = nextMonthDate {
-                    cachedMonthGridView(days: cachedNextMonthDays, month: nextMonth)
-                        .offset(y: currentMonthOffset + calendarHeight)
+                .frame(height: calendarHeight)
+                .clipped()
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            handleDragChanged(value, width: geometry.size.width)
+                        }
+                        .onEnded { value in
+                            handleDragEnded(value, width: geometry.size.width)
+                        }
+                )
+            }
+            .background(Color.white)
+            .onAppear {
+                // 初始化缓存和宽度
+                availableWidth = geometry.size.width
+                updateMonthCache()
+            }
+            .onChange(of: displayedMonth) { oldValue, newValue in
+                // 月份变化后更新缓存（在动画完成后）
+                if !isAnimating {
+                    updateMonthCache()
                 }
             }
-            .frame(height: calendarHeight)
-            .clipped()
-            .gesture(
-                DragGesture()
-                    .onChanged { value in
-                        handleDragChanged(value)
-                    }
-                    .onEnded { value in
-                        handleDragEnded(value)
-                    }
-            )
-        }
-        .background(Color.white)
-        .onAppear {
-            // 初始化缓存
-            updateMonthCache()
-        }
-        .onChange(of: displayedMonth) { _ in
-            // 月份变化后更新缓存（在动画完成后）
-            if !isAnimating {
-                updateMonthCache()
+            .onChange(of: geometry.size.width) { oldValue, newWidth in
+                // 更新可用宽度
+                availableWidth = newWidth
             }
         }
     }
@@ -234,7 +244,7 @@ struct MonthCalendarView: View {
     }
     
     /// 切换到指定月份
-    private func switchToMonth(_ date: Date, direction: MonthTransition) {
+    private func switchToMonth(_ date: Date, direction: MonthTransition, width: CGFloat? = nil) {
         // 如果正在动画中，取消前一个动画
         if isAnimating {
             // 完成当前动画状态
@@ -256,6 +266,9 @@ struct MonthCalendarView: View {
             return
         }
         
+        // 使用传入的宽度，如果没有则使用存储的可用宽度
+        let calendarWidth = width ?? availableWidth
+        
         // 准备动画 - 预先缓存目标月份数据
         isAnimating = true
         transitionDirection = direction
@@ -266,18 +279,18 @@ struct MonthCalendarView: View {
         case .previous:
             previousMonthDate = date
             cachedPreviousMonthDays = monthDaysForDate(date)
-            // 上一个月：向下推动（正偏移）
+            // 上一个月：向右推动（正偏移），从左侧滑入
             // 使用 spring 动画，更接近 iOS 原生效果
             withAnimation(.spring(response: animationDuration, dampingFraction: 0.85, blendDuration: 0)) {
-                animationOffset = calendarHeight
+                animationOffset = calendarWidth
             }
         case .next:
             nextMonthDate = date
             cachedNextMonthDays = monthDaysForDate(date)
-            // 下一个月：向上推动（负偏移）
+            // 下一个月：向左推动（负偏移），从右侧滑入
             // 使用 spring 动画，更接近 iOS 原生效果
             withAnimation(.spring(response: animationDuration, dampingFraction: 0.85, blendDuration: 0)) {
-                animationOffset = -calendarHeight
+                animationOffset = -calendarWidth
             }
         case .none:
             break
@@ -299,8 +312,8 @@ struct MonthCalendarView: View {
         }
     }
     
-    /// 处理拖动变化
-    private func handleDragChanged(_ value: DragGesture.Value) {
+    /// 处理拖动变化（左右滑动）
+    private func handleDragChanged(_ value: DragGesture.Value, width: CGFloat) {
         // 如果正在动画中，不响应手势
         guard !isAnimating else { return }
         
@@ -310,37 +323,37 @@ struct MonthCalendarView: View {
             prepareAdjacentMonths()
         }
         
-        // 限制拖动范围，避免拖动过远
-        let translation = value.translation.height
-        let maxDrag = calendarHeight * 0.4 // 最多拖动 40% 的高度
+        // 限制拖动范围，避免拖动过远（使用水平方向）
+        let translation = value.translation.width
+        let maxDrag = width * 0.4 // 最多拖动 40% 的宽度
         dragOffset = max(-maxDrag, min(maxDrag, translation))
     }
     
-    /// 处理拖动结束
-    private func handleDragEnded(_ value: DragGesture.Value) {
+    /// 处理拖动结束（左右滑动）
+    private func handleDragEnded(_ value: DragGesture.Value, width: CGFloat) {
         guard isDragging else { return }
         
-        let translation = value.translation.height
-        let velocity = value.predictedEndTranslation.height - value.translation.height
+        let translation = value.translation.width
+        let velocity = value.predictedEndTranslation.width - value.translation.width
         
         // 判断是否应该切换月份
         let shouldSwitch = abs(translation) > swipeThreshold || abs(velocity) > 100
         
         if shouldSwitch {
             if translation > 0 {
-                // 向下拖动 - 切换到上一个月
+                // 向右拖动 - 切换到上一个月（从左侧滑入）
                 if let prevMonth = calendar.date(byAdding: .month, value: -1, to: displayedMonth) {
                     isDragging = false
                     dragOffset = 0
-                    switchToMonth(prevMonth, direction: .previous)
+                    switchToMonth(prevMonth, direction: .previous, width: width)
                     return
                 }
             } else {
-                // 向上拖动 - 切换到下一个月
+                // 向左拖动 - 切换到下一个月（从右侧滑入）
                 if let nextMonth = calendar.date(byAdding: .month, value: 1, to: displayedMonth) {
                     isDragging = false
                     dragOffset = 0
-                    switchToMonth(nextMonth, direction: .next)
+                    switchToMonth(nextMonth, direction: .next, width: width)
                     return
                 }
             }
@@ -382,9 +395,9 @@ struct MonthCalendarView: View {
             Button(action: previousMonth) {
                 Image(systemName: "chevron.left")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(Color(hex: "8F9BB3"))
+                    .foregroundColor(Color("8F9BB3"))
                     .frame(width: 34, height: 34)
-                    .background(Color(hex: "F4F5F7"))
+                    .background(Color("F4F5F7"))
                     .cornerRadius(10)
             }
             
@@ -394,11 +407,11 @@ struct MonthCalendarView: View {
             VStack(spacing: 4) {
                 Text(monthString)
                     .font(.system(size: 20, weight: .medium))
-                    .foregroundColor(Color(hex: "222B45"))
+                    .foregroundColor(Color("222B45"))
                 
                 Text(yearString)
                     .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(Color(hex: "8F9BB3"))
+                    .foregroundColor(Color("8F9BB3"))
             }
             
             Spacer()
@@ -407,9 +420,9 @@ struct MonthCalendarView: View {
             Button(action: nextMonth) {
                 Image(systemName: "chevron.right")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(Color(hex: "8F9BB3"))
+                    .foregroundColor(Color("8F9BB3"))
                     .frame(width: 34, height: 34)
-                    .background(Color(hex: "F4F5F7"))
+                    .background(Color("F4F5F7"))
                     .cornerRadius(10)
             }
         }
@@ -422,7 +435,7 @@ struct MonthCalendarView: View {
             ForEach(daysOfWeek, id: \.self) { day in
                 Text(day)
                     .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(Color(hex: "8F9BB3"))
+                    .foregroundColor(Color("8F9BB3"))
                     .frame(maxWidth: .infinity)
             }
         }
@@ -476,7 +489,7 @@ private struct DayCell: View {
                     .font(.system(size: 15, weight: isSelected ? .bold : .medium))
                     .foregroundColor(textColor)
                     .frame(width: 30, height: 30)
-                    .background(isSelected ? Color(hex: "735BF2") : Color.clear)
+                    .background(isSelected ? Color("735BF2") : Color.clear)
                     .cornerRadius(10)
                 
                 // 事件指示器
@@ -507,18 +520,18 @@ private struct DayCell: View {
         if isSelected {
             return .white
         } else if isInCurrentMonth {
-            return Color(hex: "222B45")
+            return Color("222B45")
         } else {
-            return Color(hex: "8F9BB3")
+            return Color("8F9BB3")
         }
     }
 }
 
 // 颜色扩展
 private extension Color {
-    static let purple = Color(hex: "6D29F6")
-    static let blue = Color(hex: "0095FF")
-    static let green = Color(hex: "00B383")
+    static let purple = Color("6D29F6")
+    static let blue = Color("0095FF")
+    static let green = Color("00B383")
 }
 
 #Preview {
