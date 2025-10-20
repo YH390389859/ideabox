@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appState: AppState
+    
     @State private var selectedDate = Date()
     @State private var showingAddSheet = false
     @State private var selectedTab: NavigationTab = .calendar
@@ -56,6 +58,31 @@ struct ContentView: View {
     ]
     
     var body: some View {
+        Group {
+            if appState.isCheckingAuth {
+                // 加载状态
+                ProgressView("检查登录状态...")
+            } else if appState.isAuthenticated {
+                // 已登录 - 显示主界面
+                mainView
+            } else {
+                // 未登录 - 显示登录界面
+                AuthenticationView()
+                    .onAppear {
+                        // 监听登录成功事件
+                        NotificationCenter.default.addObserver(
+                            forName: NSNotification.Name("UserDidLogin"),
+                            object: nil,
+                            queue: .main
+                        ) { _ in
+                            appState.checkAuthStatus()
+                        }
+                    }
+            }
+        }
+    }
+    
+    private var mainView: some View {
         ZStack(alignment: .bottom) {
             // 主内容区域
             VStack(spacing: 0) {

@@ -3,6 +3,8 @@ import FirebaseCore
 
 @main
 struct IdeaBoxApp: App {
+    @StateObject private var appState = AppState()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -10,6 +12,10 @@ struct IdeaBoxApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appState)
+                .onAppear {
+                    appState.checkAuthStatus()
+                }
         }
     }
 }
