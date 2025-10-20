@@ -188,6 +188,12 @@ enum PasswordStrength: Int, Equatable, Comparable {
     /// 检测连续字符（如 abc、123）
     private static func hasSequentialCharacters(_ password: String) -> Bool {
         let chars = Array(password.lowercased())
+        
+        // 如果密码长度小于 3，无法检测连续字符
+        guard chars.count >= 3 else {
+            return false
+        }
+        
         for i in 0..<(chars.count - 2) {
             let char1 = chars[i].asciiValue ?? 0
             let char2 = chars[i + 1].asciiValue ?? 0
@@ -203,6 +209,12 @@ enum PasswordStrength: Int, Equatable, Comparable {
     /// 检测重复字符（如 aaa、111）
     private static func hasRepeatedCharacters(_ password: String) -> Bool {
         let chars = Array(password)
+        
+        // 如果密码长度小于 3，无法检测重复字符
+        guard chars.count >= 3 else {
+            return false
+        }
+        
         for i in 0..<(chars.count - 2) {
             if chars[i] == chars[i + 1] && chars[i + 1] == chars[i + 2] {
                 return true
