@@ -88,7 +88,7 @@ final class LoginViewModel: ObservableObject {
             )
             
             // 获取访问令牌
-            if let token = try? await authService.getCurrentUser()?.id {
+            if let token = authService.getCurrentUser()?.id {
                 // 创建并保存会话
                 let session = try sessionManager.createSession(
                     for: user,

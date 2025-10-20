@@ -77,7 +77,7 @@ struct User: Identifiable, Codable, Equatable {
         // 从 Firestore 加载偏好设置（默认值）
         self.rememberMe = false
         self.theme = .system
-        self.language = Locale.current.languageCode ?? "zh"
+        self.language = Locale.current.language.languageCode?.identifier ?? "zh"
     }
     
     /// 完整初始化器（用于测试或自定义创建）

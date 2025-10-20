@@ -53,18 +53,20 @@ struct SignUpView: View {
                             Toggle("", isOn: $viewModel.agreedToTerms)
                                 .labelsHidden()
                             
-                            Text("我已阅读并同意")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color("8F9BB3")) +
-                            Text("服务条款")
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(Color("735BF2")) +
-                            Text("和")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color("8F9BB3")) +
-                            Text("隐私政策")
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(Color("735BF2"))
+                            HStack(spacing: 0) {
+                                Text("我已阅读并同意")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(Color("8F9BB3"))
+                                Text("服务条款")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(Color("735BF2"))
+                                Text("和")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(Color("8F9BB3"))
+                                Text("隐私政策")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(Color("735BF2"))
+                            }
                         }
                     }
                     

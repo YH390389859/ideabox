@@ -75,7 +75,9 @@ struct ContentView: View {
                             object: nil,
                             queue: .main
                         ) { _ in
-                            appState.checkAuthStatus()
+                            Task { @MainActor in
+                                appState.checkAuthStatus()
+                            }
                         }
                     }
             }
