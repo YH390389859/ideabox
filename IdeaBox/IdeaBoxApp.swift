@@ -14,7 +14,9 @@ struct IdeaBoxApp: App {
             ContentView()
                 .environmentObject(appState)
                 .onAppear {
-                    appState.checkAuthStatus()
+                    Task { @MainActor in
+                        appState.checkAuthStatus()
+                    }
                 }
         }
     }
