@@ -1,0 +1,29 @@
+{
+  "figmaNode": "1:957",
+  "figmaFileKey": "TvdKaafvYjCsBQlwL2FEkz",
+  "generatedAt": "2026-03-21",
+  "assetSets": [
+    { "name": "FigmaAvatar", "file": "avatar.jpg", "source": "https://www.figma.com/api/mcp/asset/9c04fcc1-0363-44e4-99c4-d2168b6125c7" },
+    { "name": "FigmaHabitBook", "file": "habit_book.svg", "source": "https://www.figma.com/api/mcp/asset/61872a2a-5a34-48eb-ada5-565748c6e336" },
+    { "name": "FigmaStreakFlame", "file": "streak_flame.svg", "source": "https://www.figma.com/api/mcp/asset/e18767ab-649f-4a20-9ea8-5376e08653fe" },
+    { "name": "FigmaHabitWater", "file": "habit_water.svg", "source": "https://www.figma.com/api/mcp/asset/26505b95-1a0e-4992-99da-cd878cd9ec25" },
+    { "name": "FigmaHabitDumbbell", "file": "habit_dumbbell.svg", "source": "https://www.figma.com/api/mcp/asset/363ea07a-6244-4699-ac7f-ac8ee7d8086c" },
+    { "name": "FigmaCheckmarkFilled", "file": "checkmark_filled.svg", "source": "https://www.figma.com/api/mcp/asset/a4fd48ee-b5dd-419b-8516-93b776fd747d" },
+    { "name": "FigmaHabitMeditation", "file": "habit_meditation.svg", "source": "https://www.figma.com/api/mcp/asset/9d886075-419d-4635-a543-321ca1bdb98e" },
+    { "name": "FigmaHabitPencil", "file": "habit_pencil.svg", "source": "https://www.figma.com/api/mcp/asset/92aa2699-4f33-4449-b0ad-25b9e9752b14" },
+    { "name": "FigmaHabitMoon", "file": "habit_moon.svg", "source": "https://www.figma.com/api/mcp/asset/2724e957-221e-4083-aa51-e89560cc79fa" },
+    { "name": "FigmaHabitApple", "file": "habit_apple.svg", "source": "https://www.figma.com/api/mcp/asset/1c830f40-425b-43bb-a884-53c4f0c5d368" },
+    { "name": "FigmaHabitMusic", "file": "habit_music.svg", "source": "https://www.figma.com/api/mcp/asset/529bb5e4-d48f-48e0-b6d4-f3ffbcffc1ff" },
+    { "name": "FigmaHabitBrain", "file": "habit_brain.svg", "source": "https://www.figma.com/api/mcp/asset/a6fdced4-abf4-41af-8a34-f86f53a47c36" },
+    { "name": "FigmaHabitSun", "file": "habit_sun.svg", "source": "https://www.figma.com/api/mcp/asset/9172bc69-f5a1-4e95-9c74-d3d1494ce84e" },
+    { "name": "FigmaHabitAdd", "file": "habit_add.svg", "source": "https://www.figma.com/api/mcp/asset/d8b3aa46-f15e-4eca-8d28-76783cd1e8ff" },
+    { "name": "FigmaTabDashboard", "file": "tab_dashboard.svg", "source": "https://www.figma.com/api/mcp/asset/87689b90-a5b1-4895-b7de-0e2f45152181" },
+    { "name": "FigmaTabHabits", "file": "tab_habits.svg", "source": "https://www.figma.com/api/mcp/asset/ec1e0cbb-62ce-4cb8-a9fc-adf039a75f7f" },
+    { "name": "FigmaTabClips", "file": "tab_clips.svg", "source": "https://www.figma.com/api/mcp/asset/e145332e-47c9-4f9c-802a-045a1bcf74dc" }
+  ],
+  "fonts": [
+    { "bundleName": "Inter-Variable.ttf", "source": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/inter/Inter%5Bopsz,wght%5D.ttf" },
+    { "bundleName": "NotoSansSC-Variable.ttf", "source": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf" },
+    { "bundleName": "NotoSansJP-Variable.ttf", "source": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf" }
+  ]
+}
