@@ -4,8 +4,8 @@ import SwiftUI
 struct IdeaBoxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppLaunchView()
+                .preferredColorScheme(.light)
         }
     }
 }
-

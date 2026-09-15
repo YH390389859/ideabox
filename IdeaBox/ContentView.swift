@@ -1,157 +1,162 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedDate = Date()
-    @State private var showingAddSheet = false
-    
-    let events: [EventItem] = [
-        EventItem(
-            type: .textDiary,
-            time: "07:30",
-            title: "07:30  晨间日记",
-            subtitle: "今天是个好天气，准备开始新的一天...",
-            backgroundColor: Color(hex: "EDF2FF"),
-            borderColor: Color(hex: "007AFF"),
-            accentColor: Color(hex: "007AFF"),
-            logoColor: Color(hex: "D9E0F2")
-        ),
-        EventItem(
-            type: .link,
-            time: "09:15",
-            title: "09:15  GitHub - SwiftUI 教程",
-            subtitle: "github.com",
-            backgroundColor: Color(hex: "EDF5FF"),
-            borderColor: Color(hex: "0085FF"),
-            accentColor: Color(hex: "0085FF"),
-            logoColor: Color(hex: "D9E5FF")
-        ),
-        EventItem(
-            type: .link,
-            time: "12:55",
-            title: "12:55  苹果官网 - iPhone 15 Pro",
-            subtitle: "apple.com",
-            backgroundColor: Color(hex: "EDF2FF"),
-            borderColor: Color(hex: "007AFF"),
-            accentColor: Color(hex: "007AFF"),
-            logoColor: Color(hex: "E0E5F2")
-        ),
-        EventItem(
-            type: .textDiary,
-            time: "14:20",
-            title: "14:20  今天的工作总结",
-            subtitle: "完成了三个重要任务，感觉效率很高...",
-            backgroundColor: Color(hex: "EDF2FF"),
-            borderColor: Color(hex: "007AFF"),
-            accentColor: Color(hex: "007AFF"),
-            logoColor: Color(hex: "D9E0F2")
-        ),
-        EventItem(
-            type: .voiceDiary,
-            time: "15:45",
-            title: "15:45  周末计划",
-            subtitle: "想去爬山，然后约朋友吃饭...",
-            backgroundColor: Color(hex: "EDF2FF"),
-            borderColor: Color(hex: "007AFF"),
-            accentColor: Color(hex: "007AFF"),
-            logoColor: Color(hex: "D9E0F2")
-        ),
-        EventItem(
-            type: .link,
-            time: "16:30",
-            title: "16:30  小红书",
-            subtitle: "秋日穿搭分享 | 温柔又显白的配色...",
-            backgroundColor: Color(hex: "FFF2F5"),
-            borderColor: Color(hex: "FF2442"),
-            accentColor: Color(hex: "FF2442"),
-            logoColor: Color(hex: "FFE0E5")
-        ),
-        EventItem(
-            type: .link,
-            time: "17:15",
-            title: "17:15  知乎",
-            subtitle: "AI设计工具对比：Figma vs Sketch...",
-            backgroundColor: Color(hex: "EDF5FF"),
-            borderColor: Color(hex: "0085FF"),
-            accentColor: Color(hex: "0085FF"),
-            logoColor: Color(hex: "D9E5FF")
-        ),
-        EventItem(
-            type: .textDiary,
-            time: "20:30",
-            title: "20:30  晚间反思",
-            subtitle: "今天收获满满，明天继续加油...",
-            backgroundColor: Color(hex: "EDF2FF"),
-            borderColor: Color(hex: "007AFF"),
-            accentColor: Color(hex: "007AFF"),
-            logoColor: Color(hex: "D9E0F2")
-        )
-    ]
-    
+    var allowsAmbientMotion = true
+    @StateObject private var appModel = AppModel()
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Namespace private var navigation
+    @State private var showingCreate = false
+    @State private var showingHabit = false
+    @State private var composer: ComposerKind?
+    @State private var pendingCreation: CreationDestination?
+
+    private enum CreationDestination {
+        case habit
+        case record(ComposerKind)
+    }
+
     var body: some View {
         ZStack(alignment: .bottom) {
-            VStack(spacing: 0) {
-                // 周日历（iOS 风格分页）
-                WeekCalendarView(selectedDate: $selectedDate)
-                
-                // 日期标题
-                DateHeaderView(selectedDate: selectedDate)
-                
-                // 时间轴容器
-                TimelineView(events: events)
-                
-                Spacer()
+            Loom.paper.ignoresSafeArea()
+            ZStack {
+                page(.dashboard) { DashboardScreen(allowsAmbientMotion: allowsAmbientMotion) }
+                page(.habits) { HabitsScreen() }
+                page(.clips) { ClipsScreen() }
             }
-            .background(Color.white)
-            
-            // 底部导航栏（智能显示"今天"按钮）
-            BottomNavigationBar(
-                selectedDate: $selectedDate,
-                showingAddSheet: $showingAddSheet,
-                onTodayTapped: {
-                    jumpToToday()
+            .environmentObject(appModel)
+            .animation(reduceMotion ? nil : .easeInOut(duration: 0.24), value: appModel.currentTab)
+            navigationBar
+        }
+        .tint(Loom.cobalt)
+        .sheet(isPresented: $showingCreate, onDismiss: presentSelectedCreation) {
+            creationMenu
+                .presentationDetents([.height(460)])
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(22)
+                .presentationBackground(Loom.paper)
+        }
+        .sheet(isPresented: $showingHabit) {
+            HabitEditorSheet().environmentObject(appModel)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(22)
+                .presentationBackground(Loom.paper)
+        }
+        .sheet(item: $composer) { kind in
+            RecordComposerSheet(kind: kind).environmentObject(appModel)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(22)
+                .presentationBackground(Loom.paper)
+        }
+    }
+
+    private func page<Content: View>(_ tab: AppTab, @ViewBuilder content: () -> Content) -> some View {
+        content()
+            .opacity(appModel.currentTab == tab ? 1 : 0)
+            .offset(x: reduceMotion || appModel.currentTab == tab ? 0 : 12)
+            .allowsHitTesting(appModel.currentTab == tab)
+            .accessibilityHidden(appModel.currentTab != tab)
+    }
+
+    private var navigationBar: some View {
+        VStack(spacing: 10) {
+            Rectangle().fill(Loom.hairline).frame(height: 0.8)
+            HStack(spacing: 4) {
+                ForEach(AppTab.allCases) { tab in
+                    let selected = appModel.currentTab == tab
+                    Button {
+                        if selected { appModel.requestScrollToTop(for: tab) }
+                        appModel.activate(tab: tab)
+                    } label: {
+                        VStack(alignment: .leading, spacing: 9) {
+                            Text(title(for: tab)).font(.system(size: 14, weight: selected ? .semibold : .regular))
+                                .foregroundStyle(selected ? Loom.ink : Loom.secondary)
+                            ZStack {
+                                Color.clear.frame(width: 29, height: 2)
+                                if selected {
+                                    Rectangle().fill(Loom.ink).frame(width: 29, height: 2)
+                                        .matchedGeometryEffect(id: "index", in: navigation)
+                                }
+                            }
+                        }.frame(maxWidth: .infinity, alignment: .leading).frame(height: 48).contentShape(Rectangle())
+                    }
+                    .buttonStyle(StudioPressStyle())
+                    .accessibilityAddTraits(selected ? .isSelected : [])
+                    .accessibilityIdentifier("tab-\(tab.rawValue)")
                 }
-            )
+                Button {
+                    IdeaAudioController.stopAllPlayback()
+                    showingCreate = true
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "plus").font(.system(size: 18, weight: .light))
+                        Text("拾起").font(.system(size: 13, weight: .medium))
+                    }.foregroundStyle(Loom.paper)
+                        .frame(width: 110, height: 48).background(Loom.ink, in: ShuttleShape())
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(StudioPressStyle())
+                .accessibilityLabel("拾起：新建文字、语音、链接或习惯")
+                .accessibilityIdentifier("global-create")
+            }
         }
-        .ignoresSafeArea(edges: .bottom)
-        .onChange(of: selectedDate) { _ in
-            // 当选中日期变化时，可以在这里加载该日期的事件数据
+        .padding(.horizontal, 24).padding(.top, 12).padding(.bottom, 6)
+        .background(Loom.paper.ignoresSafeArea(edges: .bottom))
+        .animation(reduceMotion ? nil : Studio.spring, value: appModel.currentTab)
+        .sensoryFeedback(.selection, trigger: appModel.currentTab)
+    }
+
+    private var creationMenu: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            LoomHeader(index: "CAPTURE / PICK UP A THREAD", title: "这一刻，留下什么？", subtitle: "一段话，一个声音，远处的一个链接。")
+                .padding(.bottom, 6)
+            creationOption("写下来", detail: "TEXT / 一点念头", symbol: "pencil.line", kind: .text, surface: .text)
+            creationOption("录一段", detail: "VOICE / 此刻的声音", symbol: "waveform", kind: .voice, surface: .voice)
+            creationOption("留链接", detail: "LINK / 通向别处", symbol: "arrow.up.right", kind: .link, surface: .link)
+            Button {
+                pendingCreation = .habit
+                showingCreate = false
+            } label: {
+                HStack(spacing: 10) {
+                    Image(systemName: "plus").font(.system(size: 17, weight: .light))
+                    Text("添加一根习惯的线").font(.system(size: 13, weight: .medium))
+                    Spacer()
+                    Image(systemName: "arrow.up.right").font(.system(size: 12))
+                }.foregroundStyle(Loom.ink).frame(height: 48).contentShape(Rectangle())
+            }.buttonStyle(StudioPressStyle()).padding(.top, 2)
+        }.padding(.horizontal, 24).padding(.top, 10).padding(.bottom, 20)
+    }
+
+    private func creationOption(_ title: String, detail: String, symbol: String, kind: ComposerKind, surface: MaterialSampleKind) -> some View {
+        Button { openComposer(kind) } label: {
+            HStack(spacing: 15) {
+                Image(systemName: symbol).font(.system(size: 20, weight: .light)).frame(width: 24)
+                Text(title).font(.system(size: 16, weight: .medium))
+                Spacer()
+                Text(detail).font(.system(size: 8, design: .monospaced))
+            }
+            .foregroundStyle(kind == .voice ? .white : Loom.ink)
+            .padding(.horizontal, 22).frame(height: 62)
+            .background(MaterialSampleSurface(kind: surface))
+            .contentShape(Rectangle())
+        }.buttonStyle(StudioPressStyle())
+    }
+
+    private func openComposer(_ kind: ComposerKind) {
+        IdeaAudioController.stopAllPlayback()
+        pendingCreation = .record(kind)
+        showingCreate = false
+    }
+    private func presentSelectedCreation() {
+        guard let destination = pendingCreation else { return }
+        pendingCreation = nil
+        switch destination {
+        case .habit: showingHabit = true
+        case .record(let kind): composer = kind
         }
     }
-    
-    /// 跳转到今天
-    private func jumpToToday() {
-        selectedDate = Date()
+    private func title(for tab: AppTab) -> String {
+        switch tab { case .dashboard: "今天"; case .habits: "习惯"; case .clips: "收集" }
     }
 }
 
-// 扩展用于十六进制颜色
-extension Color {
-    init(hex: String) {
-        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int: UInt64 = 0
-        Scanner(string: hex).scanHexInt64(&int)
-        let a, r, g, b: UInt64
-        switch hex.count {
-        case 3: // RGB (12-bit)
-            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6: // RGB (24-bit)
-            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8: // ARGB (32-bit)
-            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-        default:
-            (a, r, g, b) = (1, 1, 1, 0)
-        }
-
-        self.init(
-            .sRGB,
-            red: Double(r) / 255,
-            green: Double(g) / 255,
-            blue:  Double(b) / 255,
-            opacity: Double(a) / 255
-        )
-    }
-}
-
-#Preview {
-    ContentView()
-}
+#Preview { ContentView() }

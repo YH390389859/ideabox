@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1160" viewBox="0 0 1600 1160" role="img" aria-labelledby="title desc">
+<title id="title">IdeaBox 全新视觉设计 · 今天、习惯、收集</title><desc id="desc">暖白背景、淡紫进度卡、鼠尾草习惯卡、杏色语音卡，三个原生 iPhone 页面设计。每屏完整展示底部导航和快速记录按钮。</desc>
+<defs><filter id="phoneShadow" x="-20%" y="-10%" width="140%" height="130%"><feDropShadow dx="0" dy="15" stdDeviation="23" flood-color="#282735" flood-opacity=".065"/></filter><filter id="navShadow" x="-20%" y="-40%" width="140%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="9" flood-color="#282735" flood-opacity=".035"/></filter><linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBE9F9"/><stop offset="1" stop-color="#E0DDF4"/></linearGradient></defs>
+<g font-family="-apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, sans-serif">
+<rect x="0" y="0" width="1600" height="1160" rx="0" fill="#F2F1ED" />
+<circle cx="103" cy="61" r="18" fill="#282735"/>
+<g transform="translate(92 50) scale(0.9166666666666666)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m12 3 2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z"/>
+</g>
+<text x="134" y="69" font-size="24" fill="#282735" font-weight="650" letter-spacing="3.8" >IDEABOX</text>
+<text x="340" y="66" font-size="15" fill="#85838D" font-weight="400" >Little things, lasting meaning</text>
+<text x="1508" y="58" font-size="10" fill="#85838D" font-weight="600" letter-spacing="2.6" text-anchor="end" >VISUAL DIRECTION</text>
+<text x="1508" y="79" font-size="10" fill="#85838D" font-weight="400" letter-spacing="1.4" text-anchor="end" >WARM MINIMAL  /  2026.09</text>
+<path d="M86 107H1514" fill="none" stroke="#EAE8E2" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" />
+<text x="196" y="141" font-size="10" fill="#85838D" font-weight="500" letter-spacing="1.7" >A QUIETER SPACE FOR EVERYDAY LIFE</text>
+<text x="1404" y="141" font-size="11" fill="#85838D" font-weight="400" text-anchor="end" >原生 iOS · 视觉与交互提案</text>
+<g transform="translate(196 171)">
+<rect x="0" y="0" width="370" height="860" rx="39" fill="#F7F6F2" stroke="#EAE8E2" stroke-width="0.9" filter="url(#phoneShadow)"/>
+<text x="26" y="32" font-size="13" fill="#282735" font-weight="600" >9:41</text>
+<rect x="132" y="15" width="106" height="27" rx="15" fill="#282735" />
+<rect x="287" y="28" width="2.5" height="4" rx="1" fill="#282735" />
+<rect x="291" y="25" width="2.5" height="7" rx="1" fill="#282735" />
+<rect x="295" y="22" width="2.5" height="10" rx="1" fill="#282735" />
+<rect x="299" y="19" width="2.5" height="13" rx="1" fill="#282735" />
+<path d="M309 23q6-5 12 0m-10 3q4-3 8 0" fill="none" stroke="#282735" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="315" cy="30" r="1.3" fill="#282735"/>
+<rect x="329" y="21" width="20" height="10" rx="3" fill="none" stroke="#282735" stroke-width="1" />
+<rect x="331" y="23" width="14" height="6" rx="1.5" fill="#282735" />
+<rect x="350" y="24" width="2" height="4" rx="1" fill="#282735" />
+<text x="24" y="91" font-size="9.5" fill="#85838D" font-weight="600" letter-spacing="1.8" >SUNDAY, SEPTEMBER 6</text>
+<text x="24" y="130" font-size="26" fill="#282735" font-weight="600" letter-spacing="-0.7" >今天，慢慢来。</text>
+<text x="24" y="158" font-size="12" fill="#85838D" font-weight="400" >为自己留一点时间，也留一点灵感。</text>
+<rect x="24" y="186" width="322" height="190" rx="26" fill="url(#hero)" />
+<text x="44" y="218" font-size="12" fill="#656076" font-weight="500" >每一点坚持，都在生长</text>
+<text x="44" y="266" font-size="45" fill="#282735" font-weight="500" letter-spacing="-2" >3</text>
+<text x="76" y="264" font-size="23" fill="#9991B9" font-weight="400" letter-spacing="-0.8" >/ 5</text>
+<text x="44" y="292" font-size="11.5" fill="#7B7491" font-weight="400" >今日习惯已完成</text>
+<rect x="44" y="324" width="115" height="5" rx="3" fill="#D7D2ED" />
+<rect x="44" y="324" width="69" height="5" rx="3" fill="#7770DD" />
+<text x="44" y="353" font-size="10.5" fill="#7B7491" font-weight="400" >很好，再向前一小步。</text>
+<circle cx="263" cy="271" r="59" fill="none" stroke="#C9C3E5" stroke-width="0.8"/>
+<path d="M230 344C219 312 243 286 246 250" fill="none" stroke="#6F866F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M245 285C264 277 277 262 279 244" fill="none" stroke="#6F866F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M240 308C228 300 219 287 218 278" fill="none" stroke="#6F866F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<ellipse cx="252" cy="247" rx="14" ry="26" transform="rotate(32 252 247)" fill="#A0B5A0"/>
+<ellipse cx="274" cy="265" rx="12" ry="21" transform="rotate(56 274 265)" fill="#D2DDC9"/>
+<ellipse cx="219" cy="285" rx="11" ry="20" transform="rotate(-45 219 285)" fill="#BACDB6"/>
+<path d="M217 325H266L260 350Q243 360 226 350Z" fill="#B5AAD3" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M222 329H261" fill="none" stroke="#CAC0E1" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<g transform="translate(285 216) scale(0.5833333333333334)" fill="none" stroke="#9890BB" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m12 3 2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z"/>
+</g>
+<circle cx="300" cy="304" r="3" fill="#CBC1DE"/>
+<circle cx="209" cy="239" r="2.5" fill="#AAA0C8"/>
+<text x="24" y="414" font-size="17" fill="#282735" font-weight="600" >今日习惯</text>
+<text x="340" y="413" font-size="10.5" fill="#85838D" font-weight="400" text-anchor="end" >查看全部 ↗</text>
+<rect x="24" y="434" width="322" height="76" rx="23" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="39" y="450" width="44" height="44" rx="15" fill="#EBE9F9" />
+<g transform="translate(50 461) scale(0.9166666666666666)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 6C8 3 5 4 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6 0-9 2v14"/>
+</g>
+<text x="97" y="465" font-size="14" fill="#282735" font-weight="600" >阅读 30 分钟</text>
+<text x="97" y="486" font-size="10.5" fill="#85838D" font-weight="400" >每天 · 连续 7 次</text>
+<circle cx="318" cy="472" r="12" fill="#7770DD"/>
+<g transform="translate(310 464) scale(0.6666666666666666)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m5 12 4.5 4.5L19 7"/>
+</g>
+<rect x="24" y="522" width="322" height="76" rx="23" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="39" y="538" width="44" height="44" rx="15" fill="#DDE9DE" />
+<g transform="translate(50 549) scale(0.9166666666666666)" fill="none" stroke="#69866F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M19 4C7 2 2 7 6 16c8 4 14-1 13-12ZM6 18l9-9"/>
+</g>
+<text x="97" y="553" font-size="14" fill="#282735" font-weight="600" >出门走一走</text>
+<text x="97" y="574" font-size="10.5" fill="#85838D" font-weight="400" >每天 · 给自己一段留白</text>
+<circle cx="318" cy="560" r="11" fill="none" stroke="#DAD8DE" stroke-width="1.4"/>
+<text x="24" y="635" font-size="17" fill="#282735" font-weight="600" >最近收集</text>
+<text x="340" y="634" font-size="10.5" fill="#85838D" font-weight="400" text-anchor="end" >全部灵感 ↗</text>
+<rect x="24" y="655" width="322" height="91" rx="24" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="40" y="671" width="36" height="36" rx="12" fill="#EBE9F9" />
+<g transform="translate(49 680) scale(0.75)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 5h14M5 10h14M5 15h10M5 20h7"/>
+</g>
+<text x="90" y="690" font-size="13.5" fill="#282735" font-weight="550" >把喜欢的日子，写下来</text>
+<text x="90" y="713" font-size="10.5" fill="#85838D" font-weight="400" >微小的改变，也值得被认真记住。</text>
+<text x="90" y="734" font-size="9.5" fill="#85838D" font-weight="400" >文字  ·  今天 10:24</text>
+<rect x="16" y="773" width="269" height="63" rx="31.5" fill="white" stroke="#EAE8E2" stroke-width="0.7" filter="url(#navShadow)"/>
+<rect x="25" y="781" width="81" height="47" rx="24" fill="#F7F6F2" />
+<g transform="translate(56 789) scale(0.75)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>
+</g>
+<text x="65" y="820" font-size="9.3" fill="#282735" font-weight="600" text-anchor="middle" >今天</text>
+<g transform="translate(141 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/><path d="m7.5 12 3 3 6-6"/>
+</g>
+<text x="150" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >习惯</text>
+<g transform="translate(226 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 3h12v18l-6-4-6 4V3Z"/>
+</g>
+<text x="235" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >收集</text>
+<circle cx="322" cy="804" r="31" fill="#282735"/>
+<g transform="translate(310 792) scale(1.0)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 4v16M4 12h16"/>
+</g>
+<rect x="133" y="846" width="104" height="4" rx="2" fill="#282735" />
+</g>
+<g transform="translate(615 171)">
+<rect x="0" y="0" width="370" height="860" rx="39" fill="#F7F6F2" stroke="#EAE8E2" stroke-width="0.9" filter="url(#phoneShadow)"/>
+<text x="26" y="32" font-size="13" fill="#282735" font-weight="600" >9:41</text>
+<rect x="132" y="15" width="106" height="27" rx="15" fill="#282735" />
+<rect x="287" y="28" width="2.5" height="4" rx="1" fill="#282735" />
+<rect x="291" y="25" width="2.5" height="7" rx="1" fill="#282735" />
+<rect x="295" y="22" width="2.5" height="10" rx="1" fill="#282735" />
+<rect x="299" y="19" width="2.5" height="13" rx="1" fill="#282735" />
+<path d="M309 23q6-5 12 0m-10 3q4-3 8 0" fill="none" stroke="#282735" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="315" cy="30" r="1.3" fill="#282735"/>
+<rect x="329" y="21" width="20" height="10" rx="3" fill="none" stroke="#282735" stroke-width="1" />
+<rect x="331" y="23" width="14" height="6" rx="1.5" fill="#282735" />
+<rect x="350" y="24" width="2" height="4" rx="1" fill="#282735" />
+<text x="24" y="91" font-size="9.5" fill="#85838D" font-weight="600" letter-spacing="1.8" >MAKE ROOM TO GROW</text>
+<text x="24" y="130" font-size="26" fill="#282735" font-weight="600" letter-spacing="-0.7" >把日常，过成喜欢。</text>
+<text x="24" y="158" font-size="12" fill="#85838D" font-weight="400" >不必完美，今天开始就很好。</text>
+<rect x="24" y="185" width="322" height="104" rx="24" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<text x="48.0" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >一</text>
+<text x="48.0" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >31</text>
+<circle cx="48.0" cy="262" r="2.1" fill="#B2C4AF"/>
+<text x="93.5" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >二</text>
+<text x="93.5" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >1</text>
+<circle cx="93.5" cy="262" r="2.1" fill="#B2C4AF"/>
+<text x="139.0" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >三</text>
+<text x="139.0" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >2</text>
+<circle cx="139.0" cy="262" r="2.1" fill="#B2C4AF"/>
+<text x="184.5" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >四</text>
+<text x="184.5" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >3</text>
+<circle cx="184.5" cy="262" r="2.1" fill="#EAE8E2"/>
+<text x="230.0" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >五</text>
+<text x="230.0" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >4</text>
+<circle cx="230.0" cy="262" r="2.1" fill="#B2C4AF"/>
+<text x="275.5" y="217" font-size="10" fill="#85838D" font-weight="400" text-anchor="middle" >六</text>
+<text x="275.5" y="244" font-size="16" fill="#282735" font-weight="550" text-anchor="middle" >5</text>
+<circle cx="275.5" cy="262" r="2.1" fill="#B2C4AF"/>
+<rect x="303.0" y="197" width="36" height="78" rx="18" fill="#282735" />
+<text x="321.0" y="217" font-size="10" fill="#C0BBCD" font-weight="400" text-anchor="middle" >日</text>
+<text x="321.0" y="244" font-size="16" fill="white" font-weight="550" text-anchor="middle" >6</text>
+<circle cx="321.0" cy="262" r="2.1" fill="#BBB2EA"/>
+<rect x="24" y="305" width="322" height="79" rx="24" fill="#DDE9DE" />
+<text x="43" y="333" font-size="12" fill="#5E7963" font-weight="550" >今天的好习惯</text>
+<text x="43" y="357" font-size="10.5" fill="#798D7B" font-weight="400" >已完成 3 项，继续自己的节奏</text>
+<circle cx="306" cy="344" r="22" fill="none" stroke="#C4D6C5" stroke-width="3"/>
+<circle cx="306" cy="344" r="22" fill="none" stroke="#77997A" stroke-width="3" stroke-linecap="round" stroke-dasharray="83 139" transform="rotate(-90 306 344)"/>
+<text x="306" y="348" font-size="11" fill="#55755A" font-weight="600" text-anchor="middle" >3/5</text>
+<text x="24" y="426" font-size="17" fill="#282735" font-weight="600" >今天，留给自己</text>
+<text x="340" y="425" font-size="10.5" fill="#85838D" font-weight="400" text-anchor="end" >9月6日 · 周日</text>
+<rect x="24" y="447" width="322" height="76" rx="23" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="39" y="463" width="44" height="44" rx="15" fill="#EBE9F9" />
+<g transform="translate(50 474) scale(0.9166666666666666)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 6C8 3 5 4 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6 0-9 2v14"/>
+</g>
+<text x="97" y="478" font-size="14" fill="#282735" font-weight="600" >阅读 30 分钟</text>
+<text x="97" y="499" font-size="10.5" fill="#85838D" font-weight="400" >每天 · 连续 7 次</text>
+<circle cx="318" cy="485" r="12" fill="#7770DD"/>
+<g transform="translate(310 477) scale(0.6666666666666666)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m5 12 4.5 4.5L19 7"/>
+</g>
+<rect x="24" y="535" width="322" height="76" rx="23" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="39" y="551" width="44" height="44" rx="15" fill="#E5ECF4" />
+<g transform="translate(50 562) scale(0.9166666666666666)" fill="none" stroke="#69866F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 3C9 7 5.5 11 5.5 15a6.5 6.5 0 0 0 13 0C18.5 11 15 7 12 3Z"/>
+</g>
+<text x="97" y="566" font-size="14" fill="#282735" font-weight="600" >喝够 8 杯水</text>
+<text x="97" y="587" font-size="10.5" fill="#85838D" font-weight="400" >每天 · 连续 3 次</text>
+<circle cx="318" cy="573" r="12" fill="#7770DD"/>
+<g transform="translate(310 565) scale(0.6666666666666666)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m5 12 4.5 4.5L19 7"/>
+</g>
+<rect x="24" y="623" width="322" height="76" rx="23" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<rect x="39" y="639" width="44" height="44" rx="15" fill="#DDE9DE" />
+<g transform="translate(50 650) scale(0.9166666666666666)" fill="none" stroke="#69866F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M19 4C7 2 2 7 6 16c8 4 14-1 13-12ZM6 18l9-9"/>
+</g>
+<text x="97" y="654" font-size="14" fill="#282735" font-weight="600" >出门走一走</text>
+<text x="97" y="675" font-size="10.5" fill="#85838D" font-weight="400" >每天 · 连续 2 次</text>
+<circle cx="318" cy="661" r="11" fill="none" stroke="#DAD8DE" stroke-width="1.4"/>
+<text x="185" y="735" font-size="10.5" fill="#85838D" font-weight="400" text-anchor="middle" >一点点积累，就已经很了不起。</text>
+<rect x="16" y="773" width="269" height="63" rx="31.5" fill="white" stroke="#EAE8E2" stroke-width="0.7" filter="url(#navShadow)"/>
+<g transform="translate(56 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>
+</g>
+<text x="65" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >今天</text>
+<rect x="110" y="781" width="81" height="47" rx="24" fill="#F7F6F2" />
+<g transform="translate(141 789) scale(0.75)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/><path d="m7.5 12 3 3 6-6"/>
+</g>
+<text x="150" y="820" font-size="9.3" fill="#282735" font-weight="600" text-anchor="middle" >习惯</text>
+<g transform="translate(226 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 3h12v18l-6-4-6 4V3Z"/>
+</g>
+<text x="235" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >收集</text>
+<circle cx="322" cy="804" r="31" fill="#282735"/>
+<g transform="translate(310 792) scale(1.0)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 4v16M4 12h16"/>
+</g>
+<rect x="133" y="846" width="104" height="4" rx="2" fill="#282735" />
+</g>
+<g transform="translate(1034 171)">
+<rect x="0" y="0" width="370" height="860" rx="39" fill="#F7F6F2" stroke="#EAE8E2" stroke-width="0.9" filter="url(#phoneShadow)"/>
+<text x="26" y="32" font-size="13" fill="#282735" font-weight="600" >9:41</text>
+<rect x="132" y="15" width="106" height="27" rx="15" fill="#282735" />
+<rect x="287" y="28" width="2.5" height="4" rx="1" fill="#282735" />
+<rect x="291" y="25" width="2.5" height="7" rx="1" fill="#282735" />
+<rect x="295" y="22" width="2.5" height="10" rx="1" fill="#282735" />
+<rect x="299" y="19" width="2.5" height="13" rx="1" fill="#282735" />
+<path d="M309 23q6-5 12 0m-10 3q4-3 8 0" fill="none" stroke="#282735" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<circle cx="315" cy="30" r="1.3" fill="#282735"/>
+<rect x="329" y="21" width="20" height="10" rx="3" fill="none" stroke="#282735" stroke-width="1" />
+<rect x="331" y="23" width="14" height="6" rx="1.5" fill="#282735" />
+<rect x="350" y="24" width="2" height="4" rx="1" fill="#282735" />
+<text x="24" y="91" font-size="9.5" fill="#85838D" font-weight="600" letter-spacing="1.8" >KEEP WHAT MOVES YOU</text>
+<text x="24" y="130" font-size="26" fill="#282735" font-weight="600" letter-spacing="-0.7" >灵感，值得被收藏。</text>
+<text x="24" y="158" font-size="12" fill="#85838D" font-weight="400" >文字、声音，还有偶然遇见的美好。</text>
+<rect x="24" y="184" width="322" height="47" rx="16" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<g transform="translate(40 198) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>
+</g>
+<text x="69" y="213" font-size="12" fill="#ACABB3" font-weight="400" >搜索你的灵感碎片</text>
+<rect x="24" y="248" width="66" height="35" rx="17.5" fill="#282735" />
+<text x="57.0" y="269.5" font-size="12" fill="white" font-weight="500" text-anchor="middle" >全部</text>
+<rect x="99" y="248" width="66" height="35" rx="17.5" fill="white" />
+<text x="132.0" y="269.5" font-size="12" fill="#85838D" font-weight="500" text-anchor="middle" >文字</text>
+<rect x="174" y="248" width="66" height="35" rx="17.5" fill="white" />
+<text x="207.0" y="269.5" font-size="12" fill="#85838D" font-weight="500" text-anchor="middle" >语音</text>
+<rect x="249" y="248" width="66" height="35" rx="17.5" fill="white" />
+<text x="282.0" y="269.5" font-size="12" fill="#85838D" font-weight="500" text-anchor="middle" >链接</text>
+<text x="24" y="321" font-size="17" fill="#282735" font-weight="600" >最近收藏</text>
+<text x="340" y="320" font-size="10.5" fill="#85838D" font-weight="400" text-anchor="end" >12 个灵感</text>
+<rect x="24" y="340" width="322" height="141" rx="24" fill="#EBE9F9" />
+<g transform="translate(42 359) scale(0.6666666666666666)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 5h14M5 10h14M5 15h10M5 20h7"/>
+</g>
+<text x="65" y="372" font-size="9.5" fill="#9087AC" font-weight="400" >文字 · 今天 10:24</text>
+<g transform="translate(309 358) scale(0.7083333333333334)" fill="none" stroke="#9087AC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="5" cy="12" r=".8"/><circle cx="12" cy="12" r=".8"/><circle cx="19" cy="12" r=".8"/>
+</g>
+<text x="42" y="405" font-size="16" fill="#282735" font-weight="550" >让日常，多一点留白。</text>
+<text x="42" y="431" font-size="11.5" fill="#746C88" font-weight="400" >生活不必总是被填满。散步、阅读，</text>
+<text x="42" y="450" font-size="11.5" fill="#746C88" font-weight="400" >或者只是安静地看一会儿天空。</text>
+<text x="42" y="469" font-size="9.5" fill="#9087AC" font-weight="400" ># 生活记录</text>
+<rect x="24" y="494" width="322" height="111" rx="24" fill="#F1DFD1" />
+<g transform="translate(42 512) scale(0.6666666666666666)" fill="none" stroke="#A77D65" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1m-7 8v3m-4 0h8"/>
+</g>
+<text x="65" y="525" font-size="9.5" fill="#A48775" font-weight="400" >语音 · 昨天 18:32</text>
+<text x="42" y="550" font-size="12" fill="#282735" font-weight="550" >傍晚散步时，想到的一件小事</text>
+<circle cx="55" cy="577" r="13" fill="#D5B69D"/>
+<path d="M52 572L59 577L52 582Z" fill="white" stroke="none" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="84.0" y="574.5" width="2.2" height="5" rx="1.1" fill="#BE987D" />
+<rect x="89.7" y="572.0" width="2.2" height="10" rx="1.1" fill="#BE987D" />
+<rect x="95.4" y="569.0" width="2.2" height="16" rx="1.1" fill="#BE987D" />
+<rect x="101.1" y="573.0" width="2.2" height="8" rx="1.1" fill="#BE987D" />
+<rect x="106.8" y="567.0" width="2.2" height="20" rx="1.1" fill="#BE987D" />
+<rect x="112.5" y="564.0" width="2.2" height="26" rx="1.1" fill="#BE987D" />
+<rect x="118.2" y="569.0" width="2.2" height="16" rx="1.1" fill="#BE987D" />
+<rect x="123.9" y="572.5" width="2.2" height="9" rx="1.1" fill="#BE987D" />
+<rect x="129.6" y="569.5" width="2.2" height="15" rx="1.1" fill="#BE987D" />
+<rect x="135.3" y="566.0" width="2.2" height="22" rx="1.1" fill="#BE987D" />
+<rect x="141.0" y="570.5" width="2.2" height="13" rx="1.1" fill="#BE987D" />
+<rect x="146.7" y="573.0" width="2.2" height="8" rx="1.1" fill="#BE987D" />
+<rect x="152.4" y="566.5" width="2.2" height="21" rx="1.1" fill="#BE987D" />
+<rect x="158.10000000000002" y="563.5" width="2.2" height="27" rx="1.1" fill="#BE987D" />
+<rect x="163.8" y="569.0" width="2.2" height="16" rx="1.1" fill="#BE987D" />
+<rect x="169.5" y="571.5" width="2.2" height="11" rx="1.1" fill="#BE987D" />
+<rect x="175.2" y="568.0" width="2.2" height="18" rx="1.1" fill="#BE987D" />
+<rect x="180.9" y="571.0" width="2.2" height="12" rx="1.1" fill="#BE987D" />
+<rect x="186.60000000000002" y="574.0" width="2.2" height="6" rx="1.1" fill="#BE987D" />
+<rect x="192.3" y="570.5" width="2.2" height="13" rx="1.1" fill="#BE987D" />
+<rect x="198.0" y="566.0" width="2.2" height="22" rx="1.1" fill="#BE987D" />
+<rect x="203.7" y="569.5" width="2.2" height="15" rx="1.1" fill="#BE987D" />
+<rect x="209.4" y="572.5" width="2.2" height="9" rx="1.1" fill="#BE987D" />
+<rect x="215.1" y="568.5" width="2.2" height="17" rx="1.1" fill="#BE987D" />
+<rect x="220.8" y="573.0" width="2.2" height="8" rx="1.1" fill="#BE987D" />
+<rect x="226.5" y="571.0" width="2.2" height="12" rx="1.1" fill="#BE987D" />
+<rect x="232.20000000000002" y="574.5" width="2.2" height="5" rx="1.1" fill="#BE987D" />
+<rect x="237.9" y="572.5" width="2.2" height="9" rx="1.1" fill="#BE987D" />
+<rect x="243.6" y="569.5" width="2.2" height="15" rx="1.1" fill="#BE987D" />
+<rect x="249.3" y="573.5" width="2.2" height="7" rx="1.1" fill="#BE987D" />
+<rect x="255.0" y="572.0" width="2.2" height="10" rx="1.1" fill="#BE987D" />
+<text x="324" y="581" font-size="10" fill="#A48775" font-weight="400" text-anchor="end" >0:45</text>
+<rect x="24" y="618" width="322" height="126" rx="24" fill="white" stroke="#EAE8E2" stroke-width="0.6" />
+<g transform="translate(42 636) scale(0.6666666666666666)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="m10 8 2-2a5 5 0 0 1 7 7l-2 2m-3 1-2 2a5 5 0 0 1-7-7l2-2m1 7 8-8"/>
+</g>
+<text x="65" y="649" font-size="9.5" fill="#85838D" font-weight="400" >链接 · 9月4日</text>
+<g transform="translate(309 635) scale(0.625)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 19 19 5M5 5h14v14"/>
+</g>
+<text x="42" y="682" font-size="15" fill="#282735" font-weight="550" >好的设计，藏在生活里</text>
+<text x="42" y="706" font-size="11" fill="#85838D" font-weight="400" >收集色彩、形状与让人心动的细节。</text>
+<text x="42" y="730" font-size="9" fill="#85838D" font-weight="500" letter-spacing="1.2" >DESIGNNOTES.CO</text>
+<rect x="263" y="714" width="63" height="20" rx="10.0" fill="#F7F6F2" />
+<text x="294.5" y="728.0" font-size="12" fill="#85838D" font-weight="500" text-anchor="middle" ># 设计</text>
+<rect x="16" y="773" width="269" height="63" rx="31.5" fill="white" stroke="#EAE8E2" stroke-width="0.7" filter="url(#navShadow)"/>
+<g transform="translate(56 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>
+</g>
+<text x="65" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >今天</text>
+<g transform="translate(141 789) scale(0.75)" fill="none" stroke="#85838D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/><path d="m7.5 12 3 3 6-6"/>
+</g>
+<text x="150" y="820" font-size="9.3" fill="#85838D" font-weight="400" text-anchor="middle" >习惯</text>
+<rect x="195" y="781" width="81" height="47" rx="24" fill="#F7F6F2" />
+<g transform="translate(226 789) scale(0.75)" fill="none" stroke="#7770DD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6 3h12v18l-6-4-6 4V3Z"/>
+</g>
+<text x="235" y="820" font-size="9.3" fill="#282735" font-weight="600" text-anchor="middle" >收集</text>
+<circle cx="322" cy="804" r="31" fill="#282735"/>
+<g transform="translate(310 792) scale(1.0)" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 4v16M4 12h16"/>
+</g>
+<rect x="133" y="846" width="104" height="4" rx="2" fill="#282735" />
+</g>
+<text x="197" y="1076" font-size="13" fill="#7770DD" font-weight="550" >01</text>
+<text x="232" y="1076" font-size="17" fill="#282735" font-weight="600" >今天</text>
+<text x="232" y="1100" font-size="11" fill="#85838D" font-weight="400" >A gentle start</text>
+<text x="616" y="1076" font-size="13" fill="#7770DD" font-weight="550" >02</text>
+<text x="651" y="1076" font-size="17" fill="#282735" font-weight="600" >习惯</text>
+<text x="651" y="1100" font-size="11" fill="#85838D" font-weight="400" >Small steps, every day</text>
+<text x="1035" y="1076" font-size="13" fill="#7770DD" font-weight="550" >03</text>
+<text x="1070" y="1076" font-size="17" fill="#282735" font-weight="600" >收集</text>
+<text x="1070" y="1100" font-size="11" fill="#85838D" font-weight="400" >Keep a little wonder</text>
+<text x="87" y="1140" font-size="10" fill="#85838D" font-weight="400" >24 pt 空间 · 26 pt 圆角 · 原生中文排版 · 克制的弹簧与呼吸动效</text>
+<text x="1512" y="1140" font-size="9" fill="#85838D" font-weight="500" letter-spacing="1.3" text-anchor="end" >DESIGN PROPOSAL / NOT A SCREENSHOT</text>
+</g></svg>

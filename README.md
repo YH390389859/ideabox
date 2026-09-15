@@ -1,218 +1,108 @@
-# 收藏日历 IdeaBox
+# IdeaBox · 日常织机
 
-基于Figma设计稿构建的iOS日历收藏应用，使用SwiftUI开发。
+把习惯、日记与灵感收藏放在一起的原生 iPhone 应用。这一版以「织」组织整个体验：习惯成为经线，完成记录留下织结，文字、声音与链接成为可以抽出来阅读的材料。
 
-## 功能特性
+界面采用暖纸白 `#F3F0E8`、墨色 `#202A2B`、钴蓝 `#3555E8`、黄绿 `#D9EB77` 与朱砂 `#C96C50`。大号日期、细标尺、平面文字导航和梭形「拾起」按钮构成主界面；内容以织片、打孔纸、磁带和折角薄纸呈现。
 
-### 📅 iOS 风格周视图日历（v1.1.0 新增）
-- ✅ **按周翻页导航**：
-  - 采用 iOS 原生 TabView 实现流畅分页
-  - 向左滑动查看下一周，向右滑动查看上一周
-  - 翻周后自动选中新周的**同一星期几**（例如：本周三 → 下周三）
-  - 可查看前后各52周（共105周，约2年范围）
-  - 到达边界时提供弹性反馈，防止误操作
-- ✅ **智能"今天"按钮**：
-  - 选中今天时自动隐藏（因为已经在今天）
-  - 选中其他日期时自动显示（方便快速回到今天）
-  - 点击后立即跳转到今天所在周
-  - 平滑的淡入淡出动画效果
+## 三个页面
 
-### 📆 日期与时间管理
-- ✅ **日期选择**：点击周内任意日期即可切换，选中日期会高亮显示
-- ✅ **智能日期显示**：自动显示选中日期的公历和农历信息
-- ✅ **智能时间轴**：
-  - 显示完整24小时时间轴（00:00-23:00）
-  - 流畅的上下滚动查看不同时间段
-  - **动态高度调整**：根据每小时事件数量自动调整显示高度
-  - 同一小时内多个事件垂直排列，清晰不重叠
-  - 自动定位到早上8点，方便查看白天事件
-  - 时间网格线辅助定位
+- **今天：今天，织一点。** 日期、真实完成进度和近期灵感围绕一块悬浮织片展开。每束经线对应当天安排中的真实习惯，颜色与习惯 UUID 稳定关联，近七天的完成记录形成历史织结。点击线端标签可打卡或撤销，通过「全部」进入完整习惯列表。
+- **习惯：把日子，织起来。** 固定习惯名称，横向浏览一周。每天一列、每个习惯一行，完成显示织结与勾，未完成显示空环，未安排日及未来日期不可打卡。日格宽度为 44 pt，可横向滚动；支持前后周、回今天、历史补卡、频率设置和创建、编辑、删除。
+- **收集：拾起，一闪而过。** 文字使用黄绿打孔纸，声音使用钴蓝磁带，链接使用折角薄纸。搜索、类型与标签筛选保持可见；详情、编辑菜单、播放与外链按钮分别操作。磁带上的等高刻纹是材料纹理，录制时的波形才来自实时麦克风音量。
 
-### 📝 内容管理
-- ✅ **多种事件类型**：
-  - 网页链接收藏
-  - 文本日记
-  - 语音日记
-- ✅ **底部导航**：快速访问今天、添加新事件、个人中心
+底部「拾起」提供写文字、录声音、留链接与新增习惯入口。文字支持富文本、标签与心情，链接支持标题和备注，记录可继续编辑或删除。
 
-## 技术栈
+## 织面与动效
 
-- **开发语言**：Swift
-- **UI框架**：SwiftUI
-- **最低版本**：iOS 15.0+
-- **开发工具**：Xcode 15.0+
+`WovenArtwork.swift` 使用 SwiftUI Canvas 绘制经纬线、透视曲面与历史结点。轻拖织面可改变张力和倾角，松手后柔和回弹；对应习惯完成状态变化时，相关经线短暂收紧。实际打卡按钮由 SwiftUI 叠层提供清楚的点击区域与无障碍标签。
 
-## 项目结构
+新开屏由 `AppLaunchView.swift` 编排：交织标记展开，梭子往返穿线，织片逐渐形成，品牌字样依次显现，再过渡到首页。总时长约 2.6 秒，支持跳过；返回前台不重播。开屏中的织片为品牌动画，首页织片绑定用户记录。
 
-```
-ideabox/
-├── IdeaBox/
-│   ├── IdeaBoxApp.swift           # 应用入口
-│   ├── ContentView.swift          # 主视图
-│   ├── Models/                    # 数据模型
-│   │   ├── EventItem.swift        # 事件数据模型
-│   │   └── DayItem.swift          # 日期数据模型
-│   ├── Views/                     # 视图组件
-│   │   ├── WeekCalendarView.swift    # 周日历组件
-│   │   ├── DateHeaderView.swift      # 日期标题组件
-│   │   ├── TimelineView.swift        # 时间轴组件
-│   │   └── BottomNavigationBar.swift # 底部导航栏组件
-│   ├── Helpers/                   # 辅助工具
-│   │   └── DateHelper.swift       # 日期处理工具
-│   ├── Assets.xcassets/           # 资源文件
-│   └── Info.plist                 # 应用配置
-└── IdeaBox.xcodeproj/             # Xcode项目文件
+系统开启「减少动态效果」时，持续变形、拖拽透视与复杂开屏停用，改为短暂淡化。首页织面在隐藏页面或非活跃场景停止持续绘制；开屏进入后台时直接结束剩余编排。切换页面会收起收集页搜索键盘。
+
+## 数据与录音
+
+- 本地 JSON 持久化；首次提供示例，已有记录、UUID 与录音文件沿用，不因视觉更新重新播种。
+- 损坏文件会备份；未知新版本的数据文件不会被覆盖。存储错误和恢复文件状态在界面中明确提示。
+- `AVAudioRecorder` / `AVAudioPlayer` 实现真实录音、暂停、继续、试听与保存；多个播放实例互斥，开始录音前停止播放，取消后清理未保存文件。
+- 缺少音频文件的旧示例显示「仅文字备忘」，不提供虚假播放按钮或时长。
+- 网页地址仅接受有效的 HTTP / HTTPS 链接。
+
+内容保存在 App 沙盒的 `Application Support/IdeaBox`，包括 `library.json` 与 `Recordings`。应用目前没有账户、云同步或远端 AI 服务。录音需要麦克风授权；真实设备录入质量和音频中断应在真机验收。习惯副标题反映计划频率，不代表已实现定时提醒。
+
+## 设计源文件
+
+本轮先完成三屏设计图，再进入原生开发：
+
+- [blueprint.svg](design/loom-20260906/blueprint.svg)：可编辑的 1500 × 1150 三屏布局板，每屏按 402 × 874 pt 设计。
+- [blueprint.png](design/loom-20260906/blueprint.png)：同源 3000 × 2300 完整预览。
+- [design-notes.md](design/loom-20260906/design-notes.md)：逐屏尺寸、配色、状态、交互与动效规范。
+- [product-direction.md](design/loom-20260906/product-direction.md)：设计方向与功能边界。
+- [brand](design/loom-20260906/brand/README.md)：新交织图标、静态启动资源及生成脚本。
+
+设计板由 `generate-blueprint.py` 生成 SVG，再由 `render-blueprint.swift` 按完整画布输出 PNG。设计图中的日期、文字与数量为布局示例，运行界面使用实际数据。
+
+本轮已在 iPhone 17（402 pt）与 iPhone SE 3（375 pt）模拟器检查三页布局，并录制原生开屏。带签名的 Debug 构建、Swift 6 数据回归测试均通过。截图与录屏如下：
+
+| 产物 | 路径 |
+|---|---|
+| 今天页 | [01-today.png](docs/screenshots/01-today.png) |
+| 习惯页 | [02-habits.png](docs/screenshots/02-habits.png) |
+| 收集页 | [03-collection.png](docs/screenshots/03-collection.png) |
+| 375 pt 小屏布局 | [04-compact.png](docs/screenshots/04-compact.png) |
+| 织造开屏录屏 | [launch-preview.mp4](docs/screenshots/launch-preview.mp4) |
+
+## 运行与构建
+
+使用 Xcode 打开 `IdeaBox/IdeaBox.xcodeproj`，选择 `IdeaBox` scheme 与 iPhone 模拟器运行。最低 iOS 17，Swift 6；富文本编辑器已保存在 `IdeaBox/Vendor`，无需另行拉取远端依赖。
+
+当前工作机的 Xcode 位于 `/Applications/Xcode-beta.app`。终端命令通过 `DEVELOPER_DIR` 选择该 Xcode，避免使用默认的 Command Line Tools。新增源文件或修改配置后，先重新生成工程：
+
+```sh
+xcodegen generate --spec IdeaBox/project.yml
 ```
 
-## 快速开始
+模拟器构建保留 Xcode 默认的本地签名，或明确使用 ad-hoc 签名；静态启动页资源也需要随应用一起签名：
 
-### 1. 克隆项目
-
-```bash
-cd /Users/echonull/project/ideabox
+```sh
+DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer \
+xcodebuild -project IdeaBox/IdeaBox.xcodeproj \
+  -scheme IdeaBox -configuration Debug -sdk iphonesimulator \
+  -destination 'generic/platform=iOS Simulator' \
+  -derivedDataPath .build-loom-20260906 \
+  CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES build
 ```
 
-### 2. 打开项目
+不要通过 `CODE_SIGNING_ALLOWED=NO` 关闭整个 App 的签名；此项目的模拟器启动资源验收使用完整本地签名。真机运行时，在 Xcode 的 Signing & Capabilities 中选择自己的开发团队，并按需要调整 Bundle Identifier。
 
-```bash
-open IdeaBox.xcodeproj
+## 数据测试
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer \
+xcrun swiftc -swift-version 6 IdeaBox/AppModel.swift Tests/AppModelTests.swift \
+  -o /tmp/IdeaBoxModelTests
+/tmp/IdeaBoxModelTests
 ```
 
-### 3. 运行应用
+测试覆盖连续打卡、计划频率、CRUD 与重启保留、旧数据兼容、损坏恢复、未知版本保护和录音文件路径安全。测试使用独立临时目录，不读写模拟器中的用户数据。
 
-1. 在Xcode中选择目标设备（模拟器或真机）
-2. 点击运行按钮 (⌘ + R)
+Debug 构建可通过 `SIMCTL_CHILD_IDEABOX_PREVIEW_TAB` 选择截图初始页，支持 `dashboard`、`habits`、`clips`。例如，将 `SIMULATOR_UDID` 替换成已启动模拟器的标识：
 
-## 界面预览
-
-应用主界面包含以下部分：
-
-1. **顶部周日历**：
-   - 显示从今天开始的连续7天
-   - 点击任意日期可切换查看
-   - 选中日期以红色圆形背景高亮显示
-   
-2. **日期标题栏**：
-   - 自动显示选中日期的公历（月日 + 星期）
-   - 显示对应的农历日期
-   
-3. **时间轴区域**：
-   - 左侧：时间刻度（11:00-16:00）
-   - 右侧：该日期的事件卡片列表
-   
-4. **底部导航栏**：
-   - 今天按钮：快速回到今天的日期
-   - 添加按钮：创建新的收藏事件
-   - 我的按钮：访问个人中心
-
-## 使用说明
-
-### 周视图导航（v1.1.0）
-
-1. **按周翻页**：
-   - **向左滑动**：查看下一周
-   - **向右滑动**：查看上一周
-   - 翻周后自动选中新周的同一星期几
-   - 例如：当前选中周三，左滑后自动选中下周三
-   
-2. **选择日期**：
-   - 点击周内的任意日期切换查看
-   - 选中日期会以红色圆形背景高亮
-   - 点击后不翻页，仅更新选中状态
-   
-3. **快速返回今天**：
-   - 点击底部导航栏的"今天"按钮（仅在查看其他日期时显示）
-   - 自动跳转到今天所在周并选中今天
-   - 按钮会自动隐藏（因为已经在今天）
-   
-4. **查看范围**：
-   - 可向前查看过去52周（约1年）
-   - 可向后查看未来52周（约1年）
-   - 总共约2年的日期范围
-
-### 时间轴操作
-
-1. **滚动查看**：
-   - 上下滑动时间轴查看全天24小时
-   - 早上的事件在顶部，晚上的事件在底部
-   - 每个时间段的高度会根据事件数量自动调整
-   
-2. **时间定位**：
-   - 左侧显示完整的时间刻度
-   - 右侧显示对应时间段的事件
-   - 同一小时内的多个事件会垂直堆叠显示
-   - 网格线帮助快速定位时间
-   
-3. **自动定位**：
-   - 打开应用时自动滚动到早上8点
-   - 方便查看白天的主要事件
-   
-4. **智能布局**：
-   - 事件多的时段自动扩展高度
-   - 事件少或没有事件的时段保持紧凑
-   - 充分利用屏幕空间
-
-## 设计规范
-
-- **主色调**：
-  - 蓝色 (#007AFF) - 默认事件
-  - 红色 (#FF2442) - 小红书类事件
-  - 蓝色 (#0085FF) - 知乎类事件
-  - 红色 (#FF453B) - 今天高亮
-  
-- **字体大小**：
-  - 标题：13-17pt
-  - 正文：11-14pt
-  - 小字：9-11pt
-
-- **圆角**：6-19px
-- **间距**：遵循8px网格系统
-
-## 开发说明
-
-### 添加新的事件类型
-
-在 `Models/EventItem.swift` 中扩展 `EventType` 枚举：
-
-```swift
-enum EventType {
-    case link
-    case textDiary
-    case voiceDiary
-    case newType  // 添加新类型
-}
+```sh
+SIMCTL_CHILD_IDEABOX_PREVIEW_TAB=clips \
+DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer \
+xcrun simctl launch --terminate-running-process SIMULATOR_UDID com.example.IdeaBox
 ```
 
-### 自定义事件卡片样式
+正常启动进入今天页。初始页参数只影响 Debug 导航，不改用户数据。
 
-在 `Views/TimelineView.swift` 的 `EventCard` 视图中修改样式。
+## 源码入口
 
-## 待开发功能
-
-- [ ] 添加事件功能
-- [ ] 事件编辑和删除
-- [ ] 数据持久化（Core Data / UserDefaults）
-- [ ] 个人中心页面
-- [ ] 搜索和筛选功能
-- [ ] 云同步功能
-- [ ] 集成真实农历转换库
-
-## 文档
-
-### 规范文档
-- **[功能规范 (spec.md)](specs/main/spec.md)** - 详细的功能需求和技术规范
-- **[需求追溯矩阵 (traceability-matrix.md)](specs/main/traceability-matrix.md)** - 需求与代码的双向映射关系
-
-### 技术文档
-- **[更新日志 (CHANGELOG.md)](CHANGELOG.md)** - 版本更新记录
-- **[架构重构文档 (ARCHITECTURE_REFACTOR.md)](ARCHITECTURE_REFACTOR.md)** - 时间轴架构重构说明
-- **[横向滚动日历 (HORIZONTAL_SCROLL_CALENDAR.md)](HORIZONTAL_SCROLL_CALENDAR.md)** - 日历滚动功能实现
-
-## 许可证
-
-MIT License
-
-## 联系方式
-
-如有问题或建议，欢迎提出Issue。
-
+- `LoomDesign.swift`：日常织机配色、标题、梭形与交织标记。
+- `DesignSystem.swift`：共享排版、表单与按钮反馈。
+- `WovenArtwork.swift`：由习惯记录驱动的 Canvas 织面与张力交互。
+- `AppLaunchView.swift`：织造开屏、跳过与生命周期处理。
+- `ContentView.swift`：平面导航和统一创建入口。
+- `DashboardScreen.swift`、`HabitsScreen.swift`、`ClipsScreen.swift`：三屏及相关编辑流程；收藏材料背景可复用。
+- `AppModel.swift`：数据、排期、统计和持久化。
+- `AudioRecorder.swift`：真实音频生命周期与跨实例播放互斥。
