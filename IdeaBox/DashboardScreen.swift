@@ -90,8 +90,8 @@ struct DashboardScreen: View {
             }
             HStack(alignment: .center, spacing: 21) {
                 Text(today.formatted(.dateTime.day(.twoDigits)))
-                    .font(.system(size: 74, weight: .light)).tracking(-6).foregroundStyle(Loom.ink)
-                    .fixedSize().padding(.leading, -4)
+                    .font(.system(size: 74, weight: .light)).monospacedDigit().foregroundStyle(Loom.ink)
+                    .fixedSize()
                 VStack(alignment: .leading, spacing: 7) {
                     Text(today.formatted(.dateTime.month(.wide).locale(Locale(identifier: "zh_CN"))))
                         .font(.system(size: 18, weight: .medium)).foregroundStyle(Loom.ink)
@@ -155,7 +155,6 @@ struct DashboardScreen: View {
                     .foregroundStyle(Loom.ink)
             }
             .padding(.horizontal, 5).padding(.vertical, 6)
-            .background(Loom.paper.opacity(0.94))
             .frame(width: 103, height: 44).contentShape(Rectangle())
         }.buttonStyle(StudioPressStyle())
             .accessibilityLabel("\(habit.name)，\(done ? "已完成，轻点撤销" : "未完成，轻点打卡")")

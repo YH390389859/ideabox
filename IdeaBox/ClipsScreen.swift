@@ -491,7 +491,7 @@ private struct RecordingPlaybackRow: View {
     }
 }
 
-/// The shared composer, used by the collection and the global quick-add sheet.
+/// The shared composer, used by the collection and the manual capture sheet.
 struct RecordComposerSheet: View {
     @EnvironmentObject private var appModel: AppModel
     @Environment(\.dismiss) private var dismiss
@@ -564,7 +564,8 @@ struct RecordComposerSheet: View {
     }
 
     var body: some View {
-        NavigationStack {
+        VStack(spacing: 0) {
+            composerHeader
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 25) {
                     StudioSheetHeader(title: sheetTitle, subtitle: subtitle)
@@ -583,22 +584,8 @@ struct RecordComposerSheet: View {
                     .accessibilityIdentifier("composer-save")
                     .padding(.horizontal, 24).padding(.vertical, 14).background(Studio.background)
             }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Text(kind == .text ? "01 / PAPER" : kind == .voice ? "02 / MAGNETIC TAPE" : "03 / LINKED SHEET")
-                        .font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(1.7).foregroundStyle(Loom.secondary)
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        if audio.phase != .idle { discardConfirmation = true } else { dismiss() }
-                    } label: {
-                        Image(systemName: "xmark").font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(Loom.ink).frame(width: 44, height: 44)
-                    }.accessibilityLabel("关闭编辑器")
-                }
-            }
-            .toolbarBackground(Studio.background, for: .navigationBar)
         }
+        .background(Studio.background.ignoresSafeArea())
         .tint(Studio.accent)
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
@@ -617,6 +604,28 @@ struct RecordComposerSheet: View {
         } message: { Text(audio.errorMessage ?? "") }
         .onChange(of: scenePhase) { _, phase in if phase == .background { audio.suspend() } }
         .onDisappear { audio.cancelRecording() }
+    }
+
+    private var composerHeader: some View {
+        HStack(spacing: 12) {
+            Text(kind == .text ? "01 / PAPER" : kind == .voice ? "02 / MAGNETIC TAPE" : "03 / LINKED SHEET")
+                .font(.system(size: 9, weight: .medium, design: .monospaced))
+                .tracking(1.7).foregroundStyle(Loom.secondary)
+                .lineLimit(1).minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityIdentifier("composer-material-label")
+            Button {
+                if audio.phase != .idle { discardConfirmation = true } else { dismiss() }
+            } label: {
+                Image(systemName: "xmark").font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(Loom.ink).frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(StudioPressStyle())
+            .accessibilityLabel("关闭编辑器")
+        }
+        .padding(.leading, 24).padding(.trailing, 14)
+        .padding(.top, 14).padding(.bottom, 4)
     }
 
     private var textEditor: some View {
