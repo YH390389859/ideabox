@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1170" viewBox="0 0 1500 1170" role="img" aria-labelledby="title description">
+<title id="title">日常织机 · 语音化作一根线</title><desc id="description">对话停留最新消息，轻点麦克风开始听写，实时文字落入原输入框；完成后可编辑并手动发送。取消与完成清楚可见。</desc>
+<defs><clipPath id="conversationClip"><rect x="0" y="114" width="402" height="634"/></clipPath><clipPath id="phoneClip"><rect width="402" height="874" rx="43"/></clipPath><filter id="deviceShadow" x="-20%" y="-10%" width="140%" height="130%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#202A2B" flood-opacity=".065"/></filter></defs><g font-family="-apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, sans-serif">
+<rect x="0" y="0" width="1500" height="1170" fill="#E7E7DE" />
+<text x="84" y="47" font-size="11" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.6">DAILY LOOM   /   VOICE BECOMES A THREAD</text>
+<text x="82" y="105" font-size="40" fill="#202A2B" font-weight="650" letter-spacing="-1.8">让声音，轻轻落成字。</text>
+<text x="561" y="103" font-size="15" fill="#737A73" font-weight="400" >话接着说，日常接着织。</text>
+<text x="1418" y="48" font-size="11" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" text-anchor="end">15 SEP 2026</text>
+<text x="1418" y="77" font-size="10" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" text-anchor="end">VOICE INPUT / CONVERSATION CONTINUITY</text>
+<path d="M84 132L1418 132" stroke="#C5CBBF" stroke-width="0.8" fill="none" />
+<g transform="translate(84 172)">
+<rect x="-1" y="-1" width="404" height="876" fill="#F3F0E8" rx="44" stroke="#ADB4A8" stroke-width=".7" filter="url(#deviceShadow)"/>
+<g clip-path="url(#phoneClip)">
+<rect x="0" y="0" width="402" height="874" fill="#F3F0E8" />
+<text x="31" y="33" font-size="14" fill="#202A2B" font-weight="650" >9:41</text>
+<rect x="142" y="10" width="118" height="28" fill="#202A2B" rx="14"/>
+<rect x="309" y="27" width="3" height="4" fill="#202A2B" rx="1"/>
+<rect x="314" y="24" width="3" height="7" fill="#202A2B" rx="1"/>
+<rect x="319" y="21" width="3" height="10" fill="#202A2B" rx="1"/>
+<rect x="324" y="18" width="3" height="13" fill="#202A2B" rx="1"/>
+<path d="M337 23Q345 16 353 23M340 26Q345 21 350 26M344 29L346 29" stroke="#202A2B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<rect x="361" y="20" width="23" height="12" fill="none" rx="3" stroke="#202A2B" stroke-width="1"/>
+<rect x="363" y="22" width="18" height="8" fill="#202A2B" rx="1.5"/>
+<rect x="385" y="24" width="2" height="4" fill="#202A2B" rx="1"/>
+<path d="M35 68L27 76L35 84" stroke="#202A2B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="201" y="81" font-size="11" fill="#202A2B" font-weight="500" text-anchor="middle">今天 · 09:41</text>
+<circle cx="365" cy="76" r="9" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<circle cx="365" cy="76" r="3" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<path d="M375.0 76.0L377.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 83.07106781186548L373.4852813742386 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 86.0L365.0 88.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 83.07106781186548L356.5147186257614 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M355.0 76.0L353.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 68.92893218813452L356.5147186257614 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 66.0L365.0 64.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 68.92893218813452L373.4852813742386 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M24 103L378 103" stroke="#D3D6C9" stroke-width="0.65" fill="none" />
+<text x="24" y="138" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="165" font-size="13" fill="#202A2B" font-weight="400" >不必一次想清楚。</text>
+<text x="24" y="190" font-size="13" fill="#202A2B" font-weight="400" >生活里的小事，我们慢慢记。</text>
+<path d="M24 218L378 218" stroke="#D3D6C9" stroke-width="0.6" fill="none" />
+<g clip-path="url(#conversationClip)">
+<g transform="translate(0 110)">
+<text x="24" y="141" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">EARLIER / 今天 09:32</text>
+<rect x="24" y="159" width="354" height="65" fill="#E7E7DC" />
+<text x="40" y="183" font-size="13" fill="#202A2B" font-weight="450" >今天读完了二十页书。</text>
+<text x="40" y="204" font-size="13" fill="#202A2B" font-weight="450" >帮我把阅读打个卡。</text>
+<path d="M34 247L34 347" stroke="#3555E8" stroke-width="1" fill="none" />
+<circle cx="34" cy="254" r="4" fill="#F3F0E8" stroke="#3555E8" stroke-width="1.2"/>
+<path d="M38 254L52 254" stroke="#3555E8" stroke-width="1" fill="none" />
+<rect x="52" y="239" width="326" height="94" fill="#DDE99A" />
+<circle cx="52" cy="254" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="274" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="294" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="314" r="2.5" fill="#F3F0E8" />
+<text x="68" y="261" font-size="8" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">01 / HABIT</text>
+<text x="68" y="291" font-size="20" fill="#202A2B" font-weight="600" >阅读</text>
+<text x="68" y="316" font-size="11" fill="#202A2B" font-weight="400" >今日已完成</text>
+<text x="357" y="316" font-size="10" fill="#202A2B" font-weight="400" text-anchor="end">查看   撤回</text>
+<circle cx="355" cy="260" r="7" fill="#202A2B" />
+<path d="M351 260L354 263L359 257" stroke="#DDE99A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+<text x="24" y="374" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="399" font-size="12" fill="#202A2B" font-weight="400" >替你记好了。今天又织进一小段。</text>
+<rect x="24" y="429" width="354" height="88" fill="#E7E7DC" />
+<text x="40" y="451" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">YOU / 09:41</text>
+<text x="40" y="477" font-size="13" fill="#202A2B" font-weight="450" >还有一个想法，先帮我留个位置。</text>
+<text x="40" y="500" font-size="13" fill="#202A2B" font-weight="450" >晚一点再慢慢整理。</text>
+<text x="24" y="550" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="576" font-size="14" fill="#202A2B" font-weight="500" >我在这里。随时接着说。</text>
+</g>
+</g>
+<rect x="0" y="748" width="402" height="126" fill="#F3F0E8" />
+<path d="M24 748L378 748" stroke="#202A2B" stroke-width="0.8" fill="none" />
+<rect x="42.5" y="772" width="7" height="14" fill="none" rx="3.5" stroke="#202A2B" stroke-width="1.4"/>
+<path d="M39 780V783Q39 790 46 790Q53 790 53 783V780M46 790V794M42 794H50" stroke="#202A2B" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<text x="79" y="788" font-size="14" fill="#737A73" font-weight="400" >继续留下一根线…</text>
+<path d="M318 782.0Q348.0 751.76 378 782.0Q348.0 812.24 318 782.0Z" stroke="none" stroke-width="0" fill="#202A2B" />
+<path d="M342 786L348 776L354 786M348 777V790" stroke="#F3F0E8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="832" font-size="8.5" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1">DEEPSEEK</text>
+<circle cx="93" cy="829" r="2.5" fill="#3555E8" />
+<text x="343" y="832" font-size="13" fill="#202A2B" font-weight="500" text-anchor="end">自己记</text>
+<path d="M358 832L368 822M359 822H368V831" stroke="#202A2B" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="133" y="857" width="136" height="5" fill="#202A2B" rx="2.5"/>
+</g>
+</g>
+<g transform="translate(550 172)">
+<rect x="-1" y="-1" width="404" height="876" fill="#F3F0E8" rx="44" stroke="#ADB4A8" stroke-width=".7" filter="url(#deviceShadow)"/>
+<g clip-path="url(#phoneClip)">
+<rect x="0" y="0" width="402" height="874" fill="#F3F0E8" />
+<text x="31" y="33" font-size="14" fill="#202A2B" font-weight="650" >9:41</text>
+<rect x="142" y="10" width="118" height="28" fill="#202A2B" rx="14"/>
+<rect x="309" y="27" width="3" height="4" fill="#202A2B" rx="1"/>
+<rect x="314" y="24" width="3" height="7" fill="#202A2B" rx="1"/>
+<rect x="319" y="21" width="3" height="10" fill="#202A2B" rx="1"/>
+<rect x="324" y="18" width="3" height="13" fill="#202A2B" rx="1"/>
+<path d="M337 23Q345 16 353 23M340 26Q345 21 350 26M344 29L346 29" stroke="#202A2B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<rect x="361" y="20" width="23" height="12" fill="none" rx="3" stroke="#202A2B" stroke-width="1"/>
+<rect x="363" y="22" width="18" height="8" fill="#202A2B" rx="1.5"/>
+<rect x="385" y="24" width="2" height="4" fill="#202A2B" rx="1"/>
+<path d="M35 68L27 76L35 84" stroke="#202A2B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="201" y="81" font-size="11" fill="#202A2B" font-weight="500" text-anchor="middle">今天 · 09:41</text>
+<circle cx="365" cy="76" r="9" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<circle cx="365" cy="76" r="3" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<path d="M375.0 76.0L377.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 83.07106781186548L373.4852813742386 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 86.0L365.0 88.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 83.07106781186548L356.5147186257614 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M355.0 76.0L353.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 68.92893218813452L356.5147186257614 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 66.0L365.0 64.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 68.92893218813452L373.4852813742386 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M24 103L378 103" stroke="#D3D6C9" stroke-width="0.65" fill="none" />
+<g clip-path="url(#conversationClip)">
+<g transform="translate(0 -20)">
+<text x="24" y="141" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">EARLIER / 今天 09:32</text>
+<rect x="24" y="159" width="354" height="65" fill="#E7E7DC" />
+<text x="40" y="183" font-size="13" fill="#202A2B" font-weight="450" >今天读完了二十页书。</text>
+<text x="40" y="204" font-size="13" fill="#202A2B" font-weight="450" >帮我把阅读打个卡。</text>
+<path d="M34 247L34 347" stroke="#3555E8" stroke-width="1" fill="none" />
+<circle cx="34" cy="254" r="4" fill="#F3F0E8" stroke="#3555E8" stroke-width="1.2"/>
+<path d="M38 254L52 254" stroke="#3555E8" stroke-width="1" fill="none" />
+<rect x="52" y="239" width="326" height="94" fill="#DDE99A" />
+<circle cx="52" cy="254" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="274" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="294" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="314" r="2.5" fill="#F3F0E8" />
+<text x="68" y="261" font-size="8" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">01 / HABIT</text>
+<text x="68" y="291" font-size="20" fill="#202A2B" font-weight="600" >阅读</text>
+<text x="68" y="316" font-size="11" fill="#202A2B" font-weight="400" >今日已完成</text>
+<text x="357" y="316" font-size="10" fill="#202A2B" font-weight="400" text-anchor="end">查看   撤回</text>
+<circle cx="355" cy="260" r="7" fill="#202A2B" />
+<path d="M351 260L354 263L359 257" stroke="#DDE99A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+<text x="24" y="374" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="399" font-size="12" fill="#202A2B" font-weight="400" >替你记好了。今天又织进一小段。</text>
+<rect x="24" y="429" width="354" height="88" fill="#E7E7DC" />
+<text x="40" y="451" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">YOU / 09:41</text>
+<text x="40" y="477" font-size="13" fill="#202A2B" font-weight="450" >还有一个想法，先帮我留个位置。</text>
+<text x="40" y="500" font-size="13" fill="#202A2B" font-weight="450" >晚一点再慢慢整理。</text>
+<text x="24" y="550" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="576" font-size="14" fill="#202A2B" font-weight="500" >我在这里。随时接着说。</text>
+</g>
+</g>
+<rect x="0" y="621" width="402" height="253" fill="#F3F0E8" />
+<path d="M24 621L378 621" stroke="#202A2B" stroke-width="0.8" fill="none" />
+<rect x="24" y="637" width="354" height="98" fill="#E6EBD5" rx="10"/>
+<circle cx="43" cy="657" r="3" fill="#3555E8" />
+<text x="55" y="662" font-size="12" fill="#202A2B" font-weight="550" >正在听…</text>
+<text x="357" y="662" font-size="11" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" text-anchor="end">00:08</text>
+<path d="M42.0 694.5L42.0 697.5" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M46.65 689.7145800274764L46.65 702.2854199725236" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M51.3 684.5336486875703L51.3 707.4663513124297" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M55.95 690.474773932301L55.95 701.525226067699" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M60.6 694.4264109035082L60.6 697.5735890964918" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M65.25 691.3526249906058L65.25 700.6473750093942" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M69.9 692.0710560289002L69.9 699.9289439710998" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M74.55000000000001 694.2947578540536L74.55000000000001 697.7052421459464" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M79.2 694.4998704511743L79.2 697.5001295488257" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M83.85 693.9221857441975L83.85 698.0778142558025" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M88.5 691.8592459686453L88.5 700.1407540313547" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M93.15 693.1838729070786L93.15 698.8161270929214" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M97.80000000000001 693.8287325082404L97.80000000000001 698.1712674917596" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M102.45 686.8380525353316L102.45 705.1619474646684" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M107.10000000000001 685.6805559804691L107.10000000000001 706.3194440195309" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M111.75 693.0437195282124L111.75 698.9562804717876" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M116.4 693.508417269356L116.4 698.491582730644" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M121.05000000000001 690.943062598973L121.05000000000001 701.056937401027" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M125.7 693.1231858239097L125.7 698.8768141760903" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M130.35000000000002 694.4772436295999L130.35000000000002 697.5227563704001" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M135.0 694.4696835159546L135.0 697.5303164840454" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M139.65 693.1772389315167L139.65 698.8227610684833" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M144.3 691.7613108198648L144.3 700.2386891801352" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M148.95 694.1966335948883L148.95 697.8033664051117" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M153.60000000000002 691.8141810603662L153.60000000000002 700.1858189396338" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M158.25 684.892038965843L158.25 707.107961034157" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M162.9 688.2388415606381L162.9 703.7611584393619" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M167.55 694.3799977471223L167.55 697.6200022528777" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M172.20000000000002 692.160349384045L172.20000000000002 699.839650615955" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M176.85000000000002 691.3765834922115L176.85000000000002 700.6234165077885" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M181.5 693.9427466841948L181.5 698.0572533158052" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M186.15 694.4999845000507L186.15 697.5000154999493" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M190.8 694.2711027254703L190.8 697.7288972745297" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M195.45000000000002 692.3261887533615L195.45000000000002 699.6738112466385" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M200.10000000000002 692.3902937244814L200.10000000000002 699.6097062755186" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M204.75 694.4582426582532L204.75 697.5417573417468" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M209.4 688.9479583370653L209.4 703.0520416629347" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M214.05 684.6554218170302L214.05 707.3445781829698" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M218.70000000000002 691.2134998138746L218.70000000000002 700.7865001861254" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M223.35000000000002 694.2778544034206L223.35000000000002 697.7221455965794" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M228.0 691.164480189251L228.0 700.835519810749" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M232.65 692.343180726484L232.65 699.656819273516" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M237.3 694.3679433657031L237.3 697.6320566342969" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M241.95000000000002 694.4986222210229L241.95000000000002 697.5013777789771" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M246.60000000000002 693.7576808062771L246.60000000000002 698.2423191937229" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M251.25000000000003 691.7669135460087L251.25000000000003 700.2330864539913" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M255.9 693.4733590434955L255.9 698.5266409565045" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<path d="M260.55 693.4319759018813L260.55 698.5680240981187" stroke="#3555E8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".77"/>
+<text x="294" y="705" font-size="12" fill="#737A73" font-weight="500" text-anchor="middle">取消</text>
+<rect x="318" y="682" width="47" height="34" fill="#202A2B" rx="17"/>
+<text x="342" y="704" font-size="12" fill="#F3F0E8" font-weight="550" text-anchor="middle">完成</text>
+<rect x="42.5" y="760" width="7" height="14" fill="none" rx="3.5" stroke="#3555E8" stroke-width="1.4"/>
+<path d="M39 768V771Q39 778 46 778Q53 778 53 771V768M46 778V782M42 782H50" stroke="#3555E8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<text x="79" y="763" font-size="14" fill="#202A2B" font-weight="400" >傍晚走过河边，风很轻。</text>
+<text x="79" y="787" font-size="14" fill="#202A2B" font-weight="400" >想把这个瞬间记下来</text>
+<path d="M220 774L220 791" stroke="#3555E8" stroke-width="1.5" fill="none" />
+<path d="M318 771.0Q348.0 740.76 378 771.0Q348.0 801.24 318 771.0Z" stroke="none" stroke-width="0" fill="#C8CEC0" />
+<path d="M342 775L348 765L354 775M348 766V779" stroke="#F3F0E8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="832" font-size="8.5" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1">DEEPSEEK</text>
+<circle cx="93" cy="829" r="2.5" fill="#3555E8" />
+<text x="343" y="832" font-size="13" fill="#202A2B" font-weight="500" text-anchor="end">自己记</text>
+<path d="M358 832L368 822M359 822H368V831" stroke="#202A2B" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="133" y="857" width="136" height="5" fill="#202A2B" rx="2.5"/>
+</g>
+</g>
+<g transform="translate(1016 172)">
+<rect x="-1" y="-1" width="404" height="876" fill="#F3F0E8" rx="44" stroke="#ADB4A8" stroke-width=".7" filter="url(#deviceShadow)"/>
+<g clip-path="url(#phoneClip)">
+<rect x="0" y="0" width="402" height="874" fill="#F3F0E8" />
+<text x="31" y="33" font-size="14" fill="#202A2B" font-weight="650" >9:41</text>
+<rect x="142" y="10" width="118" height="28" fill="#202A2B" rx="14"/>
+<rect x="309" y="27" width="3" height="4" fill="#202A2B" rx="1"/>
+<rect x="314" y="24" width="3" height="7" fill="#202A2B" rx="1"/>
+<rect x="319" y="21" width="3" height="10" fill="#202A2B" rx="1"/>
+<rect x="324" y="18" width="3" height="13" fill="#202A2B" rx="1"/>
+<path d="M337 23Q345 16 353 23M340 26Q345 21 350 26M344 29L346 29" stroke="#202A2B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<rect x="361" y="20" width="23" height="12" fill="none" rx="3" stroke="#202A2B" stroke-width="1"/>
+<rect x="363" y="22" width="18" height="8" fill="#202A2B" rx="1.5"/>
+<rect x="385" y="24" width="2" height="4" fill="#202A2B" rx="1"/>
+<path d="M35 68L27 76L35 84" stroke="#202A2B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="201" y="81" font-size="11" fill="#202A2B" font-weight="500" text-anchor="middle">今天 · 09:41</text>
+<circle cx="365" cy="76" r="9" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<circle cx="365" cy="76" r="3" fill="none" stroke="#202A2B" stroke-width="1.1"/>
+<path d="M375.0 76.0L377.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 83.07106781186548L373.4852813742386 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 86.0L365.0 88.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 83.07106781186548L356.5147186257614 84.48528137423857" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M355.0 76.0L353.0 76.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M357.9289321881345 68.92893218813452L356.5147186257614 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M365.0 66.0L365.0 64.0" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M372.0710678118655 68.92893218813452L373.4852813742386 67.51471862576143" stroke="#202A2B" stroke-width="1.2" fill="none" />
+<path d="M24 103L378 103" stroke="#D3D6C9" stroke-width="0.65" fill="none" />
+<g clip-path="url(#conversationClip)">
+<g transform="translate(0 -100)">
+<text x="24" y="141" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">EARLIER / 今天 09:32</text>
+<rect x="24" y="159" width="354" height="65" fill="#E7E7DC" />
+<text x="40" y="183" font-size="13" fill="#202A2B" font-weight="450" >今天读完了二十页书。</text>
+<text x="40" y="204" font-size="13" fill="#202A2B" font-weight="450" >帮我把阅读打个卡。</text>
+<path d="M34 247L34 347" stroke="#3555E8" stroke-width="1" fill="none" />
+<circle cx="34" cy="254" r="4" fill="#F3F0E8" stroke="#3555E8" stroke-width="1.2"/>
+<path d="M38 254L52 254" stroke="#3555E8" stroke-width="1" fill="none" />
+<rect x="52" y="239" width="326" height="94" fill="#DDE99A" />
+<circle cx="52" cy="254" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="274" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="294" r="2.5" fill="#F3F0E8" />
+<circle cx="52" cy="314" r="2.5" fill="#F3F0E8" />
+<text x="68" y="261" font-size="8" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">01 / HABIT</text>
+<text x="68" y="291" font-size="20" fill="#202A2B" font-weight="600" >阅读</text>
+<text x="68" y="316" font-size="11" fill="#202A2B" font-weight="400" >今日已完成</text>
+<text x="357" y="316" font-size="10" fill="#202A2B" font-weight="400" text-anchor="end">查看   撤回</text>
+<circle cx="355" cy="260" r="7" fill="#202A2B" />
+<path d="M351 260L354 263L359 257" stroke="#DDE99A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+<text x="24" y="374" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="399" font-size="12" fill="#202A2B" font-weight="400" >替你记好了。今天又织进一小段。</text>
+<rect x="24" y="429" width="354" height="88" fill="#E7E7DC" />
+<text x="40" y="451" font-size="8" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing=".9">YOU / 09:41</text>
+<text x="40" y="477" font-size="13" fill="#202A2B" font-weight="450" >还有一个想法，先帮我留个位置。</text>
+<text x="40" y="500" font-size="13" fill="#202A2B" font-weight="450" >晚一点再慢慢整理。</text>
+<text x="24" y="550" font-size="8" fill="#3555E8" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.3">LOOM</text>
+<text x="24" y="576" font-size="14" fill="#202A2B" font-weight="500" >我在这里。随时接着说。</text>
+</g>
+</g>
+<rect x="0" y="547" width="402" height="327" fill="#F3F0E8" />
+<path d="M24 547L378 547" stroke="#202A2B" stroke-width="0.8" fill="none" />
+<rect x="42.5" y="571" width="7" height="14" fill="none" rx="3.5" stroke="#3555E8" stroke-width="1.4"/>
+<path d="M39 579V582Q39 589 46 589Q53 589 53 582V579M46 589V593M42 593H50" stroke="#3555E8" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<text x="79" y="574" font-size="14" fill="#202A2B" font-weight="400" >傍晚走过河边，风很轻。</text>
+<text x="79" y="597" font-size="14" fill="#202A2B" font-weight="400" >想把这个瞬间记下来。</text>
+<path d="M224 584L224 601" stroke="#3555E8" stroke-width="1.5" fill="none" />
+<path d="M318 581.0Q348.0 550.76 378 581.0Q348.0 611.24 318 581.0Z" stroke="none" stroke-width="0" fill="#202A2B" />
+<path d="M342 585L348 575L354 585M348 576V589" stroke="#F3F0E8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="24" y="631" font-size="8.5" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1">DEEPSEEK</text>
+<circle cx="93" cy="628" r="2.5" fill="#3555E8" />
+<text x="343" y="631" font-size="13" fill="#202A2B" font-weight="500" text-anchor="end">自己记</text>
+<path d="M358 631L368 621M359 621H368V630" stroke="#202A2B" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0" y="652" width="402" height="222" fill="#DDE0DF" />
+<text x="201" y="677" font-size="13" fill="#202A2B" font-weight="450" text-anchor="middle">傍晚        河边        记下来</text>
+<path d="M12 688L390 688" stroke="#C1C8C4" stroke-width="0.6" fill="none" />
+<rect x="11" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="28.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">q</text>
+<rect x="49" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="66.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">w</text>
+<rect x="87" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="104.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">e</text>
+<rect x="125" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="142.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">r</text>
+<rect x="163" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="180.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">t</text>
+<rect x="201" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="218.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">y</text>
+<rect x="239" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="256.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">u</text>
+<rect x="277" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="294.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">i</text>
+<rect x="315" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="332.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">o</text>
+<rect x="353" y="699" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="370.0" y="721" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">p</text>
+<rect x="29" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="46.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">a</text>
+<rect x="67" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="84.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">s</text>
+<rect x="105" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="122.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">d</text>
+<rect x="143" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="160.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">f</text>
+<rect x="181" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="198.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">g</text>
+<rect x="219" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="236.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">h</text>
+<rect x="257" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="274.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">j</text>
+<rect x="295" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="312.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">k</text>
+<rect x="333" y="738" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="350.0" y="760" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">l</text>
+<rect x="67" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="84.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">z</text>
+<rect x="105" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="122.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">x</text>
+<rect x="143" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="160.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">c</text>
+<rect x="181" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="198.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">v</text>
+<rect x="219" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="236.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">b</text>
+<rect x="257" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="274.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">n</text>
+<rect x="295" y="777" width="34" height="31" fill="#FCFDFB" rx="5"/>
+<text x="312.0" y="799" font-size="18" fill="#202A2B" font-weight="400" text-anchor="middle">m</text>
+<rect x="11" y="777" width="46" height="31" fill="#C2CAC7" rx="5"/>
+<text x="34" y="799" font-size="22" fill="#202A2B" font-weight="400" text-anchor="middle">⇧</text>
+<rect x="344" y="777" width="46" height="31" fill="#C2CAC7" rx="5"/>
+<text x="367" y="798" font-size="17" fill="#202A2B" font-weight="400" text-anchor="middle">⌫</text>
+<rect x="11" y="817" width="46" height="29" fill="#C2CAC7" rx="5"/>
+<text x="34" y="837" font-size="11" fill="#202A2B" font-weight="450" text-anchor="middle">123</text>
+<rect x="63" y="817" width="43" height="29" fill="#C2CAC7" rx="5"/>
+<text x="84" y="837" font-size="10" fill="#202A2B" font-weight="450" text-anchor="middle">中/英</text>
+<rect x="112" y="817" width="186" height="29" fill="#FCFDFB" rx="5"/>
+<text x="205" y="837" font-size="12" fill="#202A2B" font-weight="450" text-anchor="middle">空格</text>
+<rect x="304" y="817" width="86" height="29" fill="#C2CAC7" rx="5"/>
+<text x="347" y="837" font-size="12" fill="#202A2B" font-weight="450" text-anchor="middle">换行</text>
+<rect x="133" y="857" width="136" height="5" fill="#202A2B" rx="2.5"/>
+</g>
+</g>
+<text x="84" y="1076" font-size="10" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.4">01  PICK UP THE THREAD</text>
+<text x="84" y="1101" font-size="12" fill="#737A73" font-weight="400" >回到对话，停留最新的一段。</text>
+<text x="550" y="1076" font-size="10" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.4">02  LISTENING, GENTLY</text>
+<text x="550" y="1101" font-size="12" fill="#737A73" font-weight="400" >轻点听写，文字随声音落下。</text>
+<text x="1016" y="1076" font-size="10" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.4">03  YOUR WORDS, YOUR SEND</text>
+<text x="1016" y="1101" font-size="12" fill="#737A73" font-weight="400" >完成后可修改，再亲手发送。</text>
+<path d="M84 1127L1418 1127" stroke="#C5CBBF" stroke-width="0.8" fill="none" />
+<text x="84" y="1150" font-size="8.5" fill="#202A2B" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" letter-spacing="1.2">ONE INPUT / LIVE TRANSCRIPT / QUIET FEEDBACK / NO AUTO-SEND</text>
+<rect x="1036" y="1141" width="11" height="11" fill="#F3F0E8" stroke="#AEB7A6" stroke-width=".4"/>
+<text x="1052" y="1150" font-size="7" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" >PAPER</text>
+<rect x="1113" y="1141" width="11" height="11" fill="#202A2B" stroke="#AEB7A6" stroke-width=".4"/>
+<text x="1129" y="1150" font-size="7" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" >INK</text>
+<rect x="1190" y="1141" width="11" height="11" fill="#3555E8" stroke="#AEB7A6" stroke-width=".4"/>
+<text x="1206" y="1150" font-size="7" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" >COBALT</text>
+<rect x="1267" y="1141" width="11" height="11" fill="#E6EBD5" stroke="#AEB7A6" stroke-width=".4"/>
+<text x="1283" y="1150" font-size="7" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" >LISTEN</text>
+<rect x="1344" y="1141" width="11" height="11" fill="#C96C50" stroke="#AEB7A6" stroke-width=".4"/>
+<text x="1360" y="1150" font-size="7" fill="#737A73" font-weight="500" font-family="SFMono-Regular, Menlo, monospace" >CLAY</text>
+</g>
+</svg>
