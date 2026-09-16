@@ -7,48 +7,91 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003BD042A939D3BA1F027A4D /* SpeechInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14D5F7E08EF743BABFF0DD9 /* SpeechInputUITests.swift */; };
 		03BE4FA50491C9F959ACDB1B /* LaunchAtmosphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31228078544D24B0F5BF7D6F /* LaunchAtmosphere.swift */; };
 		0606C5B3C9C035C9980A4ACC /* WovenArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB48C78DADF81C5D98CD1F7 /* WovenArtwork.swift */; };
 		0F1E772B8E85F3D8A4A14F95 /* IdeaBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716799FB7453E95D49AD7057 /* IdeaBoxApp.swift */; };
 		243DB857F0C2F0B891194864 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5BAC54A5557D1FE08629F /* AppTheme.swift */; };
 		264791B42D92A8249A7C753E /* Inter-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFAFEC00CA58549B50925958 /* Inter-Variable.ttf */; };
 		267B74DE1B9604A60473081E /* LoomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918BE5F94FF3CCE498FD3F /* LoomDesign.swift */; };
+		2DA99D0EA64F1BBD30A43AF9 /* ManualCaptureSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5986C36648ACC6154746E1BD /* ManualCaptureSheet.swift */; };
+		30F072BD2D89118132213089 /* DeepSeekClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A38715B28EA79296C9D36 /* DeepSeekClient.swift */; };
 		311DA29E46BC58EB02B63142 /* NotoSansSC-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A18621B674E456738FD69D49 /* NotoSansSC-Variable.ttf */; };
+		38442DD6FC6247D18C31CBB2 /* AgentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD7CEABA20BC26CB88FD1A /* AgentScreen.swift */; };
 		3B27151D0598AD059AE7B951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F28E3B2A13F6807FA7A5057 /* LaunchScreen.storyboard */; };
+		3E967AAFD0438F61D92FACE6 /* AgentSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB292CB20CDC64411E36915 /* AgentSettingsSheet.swift */; };
 		69A03BEB97C9D23310D881FD /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3E9F16E6BA86B07DC7B95 /* AppModel.swift */; };
 		6ACA6E0296A164BEA6AA1D86 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982CD06568B05FFCC228A5E /* DesignSystem.swift */; };
+		6E4E2991BACEF3D62ADE2524 /* SpeechPermissionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6606781E4CF06002ABA3EDC /* SpeechPermissionUITests.swift */; };
 		71C2766F966AE6D85ED6F19F /* ClipsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344AB724CD92D59BB93A712B /* ClipsScreen.swift */; };
 		73F7F7D7C7216FDE90BABD23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1DE725F7464349EC97AC5AF /* Assets.xcassets */; };
+		773E0412BB6A36341EEB3876 /* AgentKeyPasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DB33433426194307C81167 /* AgentKeyPasteUITests.swift */; };
+		81B6583BB53A7A85B4C7D530 /* AgentConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325302FE34C79AD79B962C3 /* AgentConnection.swift */; };
 		86261C2958B8A6FC6EB4AACE /* RichEditorSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 51E0F78E71F6717AFDB9109B /* RichEditorSwiftUI */; };
+		8995410B6D7AF74071F94A01 /* SpeechInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E236B5D28658C5899FC4A /* SpeechInputController.swift */; };
 		92B69847E02188F221708F8C /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E3609E7298A6B0516835E /* AudioRecorder.swift */; };
 		BA61B44028C9577EC1A69423 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE40BD313C86B11AB01198 /* DashboardScreen.swift */; };
+		BB13D7C48B2F3958C0280DC6 /* SpeechRecognitionRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8501348275C9643D19A56C5 /* SpeechRecognitionRecovery.swift */; };
+		C40CAEB0CD44BBCAA1D3BF08 /* NewConversationPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24CA69FAF90AD61979676FD /* NewConversationPrompt.swift */; };
+		D6E1A9E20A64604B623BF2D1 /* SpeechInputDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129C003B732EA0798CC17227 /* SpeechInputDraft.swift */; };
 		D78BA1686F7E6985AB164218 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E4BE90A0B02FD41EA33CA /* ContentView.swift */; };
+		DF54D5E258F6EE2224679336 /* AgentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73068DEBC8051B064EE632 /* AgentContext.swift */; };
+		DF8D705D7480961352B1EFAD /* AgentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670BB64D877430022BE211A /* AgentUITests.swift */; };
+		DFA73082850D4469BAF790BE /* AgentTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9EC543987F19AD0196C86 /* AgentTools.swift */; };
 		E8C214B533E0251119D858F1 /* HabitsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EA3B35E10312E1B4023E5 /* HabitsScreen.swift */; };
+		F2BC060DD261E525D88D1248 /* AgentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4E97F9582B0875050C591 /* AgentCoordinator.swift */; };
 		F3F20EEAC7733640F4D0ECED /* NotoSansJP-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70FF98545C6E65F779D2456B /* NotoSansJP-Variable.ttf */; };
 		FCE299707FB9A15FC2276C1E /* AppLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A115AA7BFF3759FBD38B0C /* AppLaunchView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE90F4E95B8C9DB3CD2F1D70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D49770FB1F38B83F8ABD128D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D85A17068734AD3B7EEEC2;
+			remoteInfo = IdeaBox;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		129C003B732EA0798CC17227 /* SpeechInputDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechInputDraft.swift; sourceTree = "<group>"; };
 		228E4BE90A0B02FD41EA33CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		24BD7CEABA20BC26CB88FD1A /* AgentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentScreen.swift; sourceTree = "<group>"; };
 		25D5BAC54A5557D1FE08629F /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		30646A069AC916081531DD04 /* IdeaBox.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IdeaBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31228078544D24B0F5BF7D6F /* LaunchAtmosphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtmosphere.swift; sourceTree = "<group>"; };
 		344AB724CD92D59BB93A712B /* ClipsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsScreen.swift; sourceTree = "<group>"; };
+		36DB33433426194307C81167 /* AgentKeyPasteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentKeyPasteUITests.swift; sourceTree = "<group>"; };
 		3CF3E9F16E6BA86B07DC7B95 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		4A2A38715B28EA79296C9D36 /* DeepSeekClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSeekClient.swift; sourceTree = "<group>"; };
 		4A9E3609E7298A6B0516835E /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		5986C36648ACC6154746E1BD /* ManualCaptureSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCaptureSheet.swift; sourceTree = "<group>"; };
 		632DDB78BFC73243EB1DCDD4 /* RichEditorSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RichEditorSwiftUI; path = Vendor/RichEditorSwiftUI; sourceTree = SOURCE_ROOT; };
 		70FF98545C6E65F779D2456B /* NotoSansJP-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Variable.ttf"; sourceTree = "<group>"; };
 		716799FB7453E95D49AD7057 /* IdeaBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBoxApp.swift; sourceTree = "<group>"; };
+		84D9EC543987F19AD0196C86 /* AgentTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentTools.swift; sourceTree = "<group>"; };
+		9325302FE34C79AD79B962C3 /* AgentConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentConnection.swift; sourceTree = "<group>"; };
+		9670BB64D877430022BE211A /* AgentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentUITests.swift; sourceTree = "<group>"; };
 		9982CD06568B05FFCC228A5E /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		9F28E3B2A13F6807FA7A5057 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A18621B674E456738FD69D49 /* NotoSansSC-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansSC-Variable.ttf"; sourceTree = "<group>"; };
 		A9BE40BD313C86B11AB01198 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
+		AB73068DEBC8051B064EE632 /* AgentContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentContext.swift; sourceTree = "<group>"; };
+		B14D5F7E08EF743BABFF0DD9 /* SpeechInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechInputUITests.swift; sourceTree = "<group>"; };
+		C8E4E97F9582B0875050C591 /* AgentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoordinator.swift; sourceTree = "<group>"; };
 		CA1EA3B35E10312E1B4023E5 /* HabitsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsScreen.swift; sourceTree = "<group>"; };
 		CDB48C78DADF81C5D98CD1F7 /* WovenArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WovenArtwork.swift; sourceTree = "<group>"; };
 		DB918BE5F94FF3CCE498FD3F /* LoomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoomDesign.swift; sourceTree = "<group>"; };
 		E1DE725F7464349EC97AC5AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6606781E4CF06002ABA3EDC /* SpeechPermissionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechPermissionUITests.swift; sourceTree = "<group>"; };
+		E8501348275C9643D19A56C5 /* SpeechRecognitionRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionRecovery.swift; sourceTree = "<group>"; };
+		EAF7145D2BFDD9586F027B48 /* IdeaBoxUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = IdeaBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEB292CB20CDC64411E36915 /* AgentSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentSettingsSheet.swift; sourceTree = "<group>"; };
 		EFAFEC00CA58549B50925958 /* Inter-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Variable.ttf"; sourceTree = "<group>"; };
 		F1A115AA7BFF3759FBD38B0C /* AppLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchView.swift; sourceTree = "<group>"; };
+		F24CA69FAF90AD61979676FD /* NewConversationPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationPrompt.swift; sourceTree = "<group>"; };
+		FF3E236B5D28658C5899FC4A /* SpeechInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +114,7 @@
 				58B5F46BD147B6D2E2DD862E /* Fonts */,
 				A29AB5BE7A925E48B31EABD6 /* IdeaBox */,
 				88DF56A151AD4A5C5F22017E /* Packages */,
+				B1E1F4A7B20CEDB6B410D451 /* UITests */,
 				CDE675926425311C256D7594 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +141,12 @@
 		A29AB5BE7A925E48B31EABD6 /* IdeaBox */ = {
 			isa = PBXGroup;
 			children = (
+				9325302FE34C79AD79B962C3 /* AgentConnection.swift */,
+				AB73068DEBC8051B064EE632 /* AgentContext.swift */,
+				C8E4E97F9582B0875050C591 /* AgentCoordinator.swift */,
+				24BD7CEABA20BC26CB88FD1A /* AgentScreen.swift */,
+				EEB292CB20CDC64411E36915 /* AgentSettingsSheet.swift */,
+				84D9EC543987F19AD0196C86 /* AgentTools.swift */,
 				F1A115AA7BFF3759FBD38B0C /* AppLaunchView.swift */,
 				3CF3E9F16E6BA86B07DC7B95 /* AppModel.swift */,
 				25D5BAC54A5557D1FE08629F /* AppTheme.swift */,
@@ -104,21 +154,40 @@
 				344AB724CD92D59BB93A712B /* ClipsScreen.swift */,
 				228E4BE90A0B02FD41EA33CA /* ContentView.swift */,
 				A9BE40BD313C86B11AB01198 /* DashboardScreen.swift */,
+				4A2A38715B28EA79296C9D36 /* DeepSeekClient.swift */,
 				9982CD06568B05FFCC228A5E /* DesignSystem.swift */,
 				CA1EA3B35E10312E1B4023E5 /* HabitsScreen.swift */,
 				716799FB7453E95D49AD7057 /* IdeaBoxApp.swift */,
 				31228078544D24B0F5BF7D6F /* LaunchAtmosphere.swift */,
 				DB918BE5F94FF3CCE498FD3F /* LoomDesign.swift */,
+				5986C36648ACC6154746E1BD /* ManualCaptureSheet.swift */,
+				F24CA69FAF90AD61979676FD /* NewConversationPrompt.swift */,
+				FF3E236B5D28658C5899FC4A /* SpeechInputController.swift */,
+				129C003B732EA0798CC17227 /* SpeechInputDraft.swift */,
+				E8501348275C9643D19A56C5 /* SpeechRecognitionRecovery.swift */,
 				CDB48C78DADF81C5D98CD1F7 /* WovenArtwork.swift */,
 			);
 			name = IdeaBox;
 			path = .;
 			sourceTree = "<group>";
 		};
+		B1E1F4A7B20CEDB6B410D451 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				36DB33433426194307C81167 /* AgentKeyPasteUITests.swift */,
+				9670BB64D877430022BE211A /* AgentUITests.swift */,
+				B14D5F7E08EF743BABFF0DD9 /* SpeechInputUITests.swift */,
+				E6606781E4CF06002ABA3EDC /* SpeechPermissionUITests.swift */,
+			);
+			name = UITests;
+			path = ../UITests;
+			sourceTree = "<group>";
+		};
 		CDE675926425311C256D7594 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				30646A069AC916081531DD04 /* IdeaBox.app */,
+				EAF7145D2BFDD9586F027B48 /* IdeaBoxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +215,24 @@
 			productReference = 30646A069AC916081531DD04 /* IdeaBox.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FCFBCA52879576A458D598C5 /* IdeaBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BB55C5D2CF1F3EC176EF308 /* Build configuration list for PBXNativeTarget "IdeaBoxUITests" */;
+			buildPhases = (
+				BF17CBE62C2954D440034812 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1594DE88D94ECBEBF7204165 /* PBXTargetDependency */,
+			);
+			name = IdeaBoxUITests;
+			packageProductDependencies = (
+			);
+			productName = IdeaBoxUITests;
+			productReference = EAF7145D2BFDD9586F027B48 /* IdeaBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -155,6 +242,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					FCFBCA52879576A458D598C5 = {
+						TestTargetID = D3D85A17068734AD3B7EEEC2;
+					};
 				};
 			};
 			buildConfigurationList = AA0DD67D2BC927D4ADF93642 /* Build configuration list for PBXProject "IdeaBox" */;
@@ -175,6 +265,7 @@
 			projectRoot = "";
 			targets = (
 				D3D85A17068734AD3B7EEEC2 /* IdeaBox */,
+				FCFBCA52879576A458D598C5 /* IdeaBoxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B6583BB53A7A85B4C7D530 /* AgentConnection.swift in Sources */,
+				DF54D5E258F6EE2224679336 /* AgentContext.swift in Sources */,
+				F2BC060DD261E525D88D1248 /* AgentCoordinator.swift in Sources */,
+				38442DD6FC6247D18C31CBB2 /* AgentScreen.swift in Sources */,
+				3E967AAFD0438F61D92FACE6 /* AgentSettingsSheet.swift in Sources */,
+				DFA73082850D4469BAF790BE /* AgentTools.swift in Sources */,
 				FCE299707FB9A15FC2276C1E /* AppLaunchView.swift in Sources */,
 				69A03BEB97C9D23310D881FD /* AppModel.swift in Sources */,
 				243DB857F0C2F0B891194864 /* AppTheme.swift in Sources */,
@@ -206,18 +303,62 @@
 				71C2766F966AE6D85ED6F19F /* ClipsScreen.swift in Sources */,
 				D78BA1686F7E6985AB164218 /* ContentView.swift in Sources */,
 				BA61B44028C9577EC1A69423 /* DashboardScreen.swift in Sources */,
+				30F072BD2D89118132213089 /* DeepSeekClient.swift in Sources */,
 				6ACA6E0296A164BEA6AA1D86 /* DesignSystem.swift in Sources */,
 				E8C214B533E0251119D858F1 /* HabitsScreen.swift in Sources */,
 				0F1E772B8E85F3D8A4A14F95 /* IdeaBoxApp.swift in Sources */,
 				03BE4FA50491C9F959ACDB1B /* LaunchAtmosphere.swift in Sources */,
 				267B74DE1B9604A60473081E /* LoomDesign.swift in Sources */,
+				2DA99D0EA64F1BBD30A43AF9 /* ManualCaptureSheet.swift in Sources */,
+				C40CAEB0CD44BBCAA1D3BF08 /* NewConversationPrompt.swift in Sources */,
+				8995410B6D7AF74071F94A01 /* SpeechInputController.swift in Sources */,
+				D6E1A9E20A64604B623BF2D1 /* SpeechInputDraft.swift in Sources */,
+				BB13D7C48B2F3958C0280DC6 /* SpeechRecognitionRecovery.swift in Sources */,
 				0606C5B3C9C035C9980A4ACC /* WovenArtwork.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF17CBE62C2954D440034812 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				773E0412BB6A36341EEB3876 /* AgentKeyPasteUITests.swift in Sources */,
+				DF8D705D7480961352B1EFAD /* AgentUITests.swift in Sources */,
+				003BD042A939D3BA1F027A4D /* SpeechInputUITests.swift in Sources */,
+				6E4E2991BACEF3D62ADE2524 /* SpeechPermissionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1594DE88D94ECBEBF7204165 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D85A17068734AD3B7EEEC2 /* IdeaBox */;
+			targetProxy = CE90F4E95B8C9DB3CD2F1D70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		19548A757535C2BEB8C535CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.IdeaBox.UITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdeaBox;
+			};
+			name = Debug;
+		};
 		347C676EB2F447600F9D7F16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -377,6 +518,25 @@
 			};
 			name = Release;
 		};
+		F7F045FA4E41EC4673992A4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.IdeaBox.UITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IdeaBox;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -385,6 +545,15 @@
 			buildConfigurations = (
 				BD9A3397E6802934007313BD /* Debug */,
 				C7905E3EFE9579A3DE53E2CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9BB55C5D2CF1F3EC176EF308 /* Build configuration list for PBXNativeTarget "IdeaBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19548A757535C2BEB8C535CC /* Debug */,
+				F7F045FA4E41EC4673992A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

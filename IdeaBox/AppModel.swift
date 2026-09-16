@@ -364,15 +364,20 @@ enum LibraryItem: Identifiable, Equatable, Codable {
 
 final class AppModel: ObservableObject {
     @Published var currentTab: AppTab = .dashboard
-    @Published var habits: [Habit] { didSet { persistIfReady() } }
-    @Published var clips: [ClipItem] { didSet { persistIfReady() } }
-    @Published var diaries: [DiaryEntry] { didSet { persistIfReady() } }
+    @Published var habits: [Habit] { didSet { trackHabitChanges(from: oldValue); persistIfReady() } }
+    @Published var clips: [ClipItem] { didSet { trackRecordChanges(oldValue, clips, prefix: "clip"); persistIfReady() } }
+    @Published var diaries: [DiaryEntry] { didSet { trackRecordChanges(oldValue, diaries, prefix: "diary"); persistIfReady() } }
+    @Published private(set) var agentReceipts: [AgentToolReceipt] = []
     @Published private(set) var persistenceError: String?
     @Published private(set) var recoveredBackupURL: URL?
 
     let storageURL: URL
     let recordingDirectoryURL: URL
     private var canPersist = false
+    private var isAgentTransaction = false
+    private var isRestoringAgentSnapshot = false
+    var agentOperations: [AgentOperationRecord] = []
+    var agentRecordRevisions: [String: String] = [:]
 
     static var defaultStorageURL: URL {
         let support = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
@@ -627,7 +632,8 @@ final class AppModel: ObservableObject {
             let encoder = JSONEncoder()
             encoder.dateEncodingStrategy = .iso8601
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-            let data = try encoder.encode(StoredLibrary(habits: habits, clips: clips, diaries: diaries))
+            let data = try encoder.encode(StoredLibrary(habits: habits, clips: clips, diaries: diaries,
+                                                       agentOperations: agentOperations, agentRecordRevisions: agentRecordRevisions))
             try data.write(to: storageURL, options: .atomic)
             persistenceError = nil
             return true
@@ -638,7 +644,73 @@ final class AppModel: ObservableObject {
     }
 
     private func persistIfReady() {
-        if canPersist { save() }
+        if canPersist && !isAgentTransaction { save() }
+    }
+
+    /// A tool's record, idempotency entry and undo state are committed as one file replacement.
+    /// A failed replacement restores every in-memory field before returning a failure receipt.
+    func commitAgentOperation(operationID: String, _ mutate: () -> AgentToolReceipt) -> AgentToolReceipt {
+        guard canPersist, !isAgentTransaction else {
+            return .failure(id: operationID, "本地记录暂时无法保存，这次操作没有执行。")
+        }
+        let previousHabits = habits
+        let previousClips = clips
+        let previousDiaries = diaries
+        let previousOperations = agentOperations
+        let previousRevisions = agentRecordRevisions
+        isAgentTransaction = true
+        let receipt = mutate()
+        refreshAgentReceipts()
+        if receipt.success && save() {
+            isAgentTransaction = false
+            return agentReceipt(for: receipt.id) ?? receipt
+        }
+        isRestoringAgentSnapshot = true
+        habits = previousHabits
+        clips = previousClips
+        diaries = previousDiaries
+        agentOperations = previousOperations
+        agentRecordRevisions = previousRevisions
+        refreshAgentReceipts()
+        isRestoringAgentSnapshot = false
+        isAgentTransaction = false
+        return receipt.success ? .failure(id: operationID, "本地保存失败，这次操作没有生效。请稍后重试。") : receipt
+    }
+
+    func refreshAgentReceipts() {
+        agentReceipts = agentOperations.map { operation in
+            var receipt = operation.receipt
+            receipt.canUndo = canUndoAgentOperation(operation)
+            return receipt
+        }
+    }
+
+    private func trackRecordChanges<T: Identifiable & Equatable>(_ before: [T], _ after: [T], prefix: String) where T.ID == UUID {
+        guard canPersist, !isRestoringAgentSnapshot else { return }
+        let old = Dictionary(before.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let new = Dictionary(after.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        for id in Set(old.keys).union(new.keys) where old[id] != new[id] {
+            agentRecordRevisions["\(prefix)/\(id.uuidString)"] = UUID().uuidString
+        }
+        refreshAgentReceipts()
+    }
+
+    private func trackHabitChanges(from before: [Habit]) {
+        guard canPersist, !isRestoringAgentSnapshot else { return }
+        let old = Dictionary(before.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let new = Dictionary(habits.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        for id in Set(old.keys).union(new.keys) {
+            let previous = old[id]
+            let current = new[id]
+            if previous?.name != current?.name || previous?.icon != current?.icon ||
+                previous?.frequency != current?.frequency || previous?.scheduledWeekdays != current?.scheduledWeekdays {
+                agentRecordRevisions["habit/\(id.uuidString)"] = UUID().uuidString
+            }
+            for key in (previous?.completedDates ?? []).symmetricDifference(current?.completedDates ?? []) {
+                agentRecordRevisions["habit/\(id.uuidString)/\(key)"] = UUID().uuidString
+            }
+        }
+        refreshAgentReceipts()
     }
 
     private func normalizedTags(_ tags: [String]) -> [String] {
@@ -668,7 +740,7 @@ final class AppModel: ObservableObject {
             decoder.dateDecodingStrategy = .iso8601
             // Read only the stable header first: a newer schema may change every other field.
             let header = try decoder.decode(StoredLibraryHeader.self, from: data)
-            guard header.schemaVersion == 1 else {
+            guard (1...2).contains(header.schemaVersion) else {
                 habits = []
                 clips = []
                 diaries = []
@@ -679,7 +751,10 @@ final class AppModel: ObservableObject {
             habits = stored.habits
             clips = stored.clips
             diaries = stored.diaries
+            agentOperations = stored.agentOperations
+            agentRecordRevisions = stored.agentRecordRevisions
             canPersist = true
+            refreshAgentReceipts()
         } catch {
             // Never replace an unreadable library until its original bytes have been backed up.
             let backup = storageURL.deletingPathExtension()
@@ -703,10 +778,33 @@ final class AppModel: ObservableObject {
     }
 
     private struct StoredLibrary: Codable {
-        var schemaVersion = 1
+        var schemaVersion = 2
         var habits: [Habit]
         var clips: [ClipItem]
         var diaries: [DiaryEntry]
+        var agentOperations: [AgentOperationRecord]
+        var agentRecordRevisions: [String: String]
+
+        init(habits: [Habit], clips: [ClipItem], diaries: [DiaryEntry],
+             agentOperations: [AgentOperationRecord], agentRecordRevisions: [String: String]) {
+            self.habits = habits
+            self.clips = clips
+            self.diaries = diaries
+            self.agentOperations = agentOperations
+            self.agentRecordRevisions = agentRecordRevisions
+        }
+
+        enum CodingKeys: String, CodingKey { case schemaVersion, habits, clips, diaries, agentOperations, agentRecordRevisions }
+
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            schemaVersion = try values.decode(Int.self, forKey: .schemaVersion)
+            habits = try values.decode([Habit].self, forKey: .habits)
+            clips = try values.decode([ClipItem].self, forKey: .clips)
+            diaries = try values.decode([DiaryEntry].self, forKey: .diaries)
+            agentOperations = try values.decodeIfPresent([AgentOperationRecord].self, forKey: .agentOperations) ?? []
+            agentRecordRevisions = try values.decodeIfPresent([String: String].self, forKey: .agentRecordRevisions) ?? [:]
+        }
     }
 
 }

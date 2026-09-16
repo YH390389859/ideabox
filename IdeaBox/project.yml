@@ -23,13 +23,14 @@ targets:
     info:
       path: Info.plist
       properties:
-        CFBundleVersion: "3"
+        CFBundleVersion: "4"
         UILaunchStoryboardName: LaunchScreen
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
           UISceneConfigurations: {}
         UIUserInterfaceStyle: Light
-        NSMicrophoneUsageDescription: 用于录下并保存你的语音灵感。录音只保存在这台设备上。
+        NSMicrophoneUsageDescription: 用于录下语音灵感，或把你说的话转成可编辑的文字。
+        NSSpeechRecognitionUsageDescription: 用于把语音转成文字草稿；系统可能将语音发送至 Apple 进行识别，草稿由你确认后发送。
         UIAppFonts:
           - Inter-Variable.ttf
           - NotoSansSC-Variable.ttf
@@ -52,3 +53,30 @@ targets:
         buildPhase: resources
         includes:
           - "*.ttf"
+  IdeaBoxUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "17.0"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.IdeaBox.UITests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: IdeaBox
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+    dependencies:
+      - target: IdeaBox
+    sources:
+      - path: ../UITests
+schemes:
+  IdeaBox:
+    build:
+      targets:
+        IdeaBox: all
+        IdeaBoxUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - name: IdeaBoxUITests
+          parallelizable: false

@@ -2,17 +2,34 @@ import SwiftUI
 
 struct ContentView: View {
     var allowsAmbientMotion = true
-    @StateObject private var appModel = AppModel()
+    @StateObject private var appModel: AppModel
+    @StateObject private var agent: AgentCoordinator
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Namespace private var navigation
-    @State private var showingCreate = false
-    @State private var showingHabit = false
-    @State private var composer: ComposerKind?
-    @State private var pendingCreation: CreationDestination?
+    @State private var showingAgent = false
+    @State private var agentDraft = ""
 
-    private enum CreationDestination {
-        case habit
-        case record(ComposerKind)
+    init(allowsAmbientMotion: Bool = true) {
+        self.allowsAmbientMotion = allowsAmbientMotion
+        #if DEBUG
+        let preview = ProcessInfo.processInfo.environment["IDEABOX_AGENT_PREVIEW"]
+        let model = preview == nil ? AppModel() : AppModel(storageURL: FileManager.default.temporaryDirectory
+            .appendingPathComponent("AgentPreview-\(UUID())/library.json"))
+        #else
+        let model = AppModel()
+        #endif
+        _appModel = StateObject(wrappedValue: model)
+        #if DEBUG
+        let previewConnection = preview == nil ? nil : AgentConnection(storage: AgentPreviewKeyStorage(),
+            preferences: UserDefaults(suiteName: "IdeaBox.AgentPreview")!)
+        let coordinator = AgentCoordinator(appModel: model, connection: previewConnection)
+        if preview == "receipts" { coordinator.loadPreviewConversation() }
+        if preview == "scroll" || preview == "speech" { coordinator.loadScrollPreviewConversation() }
+        _showingAgent = State(initialValue: preview != nil)
+        #else
+        let coordinator = AgentCoordinator(appModel: model)
+        #endif
+        _agent = StateObject(wrappedValue: coordinator)
     }
 
     var body: some View {
@@ -28,24 +45,8 @@ struct ContentView: View {
             navigationBar
         }
         .tint(Loom.cobalt)
-        .sheet(isPresented: $showingCreate, onDismiss: presentSelectedCreation) {
-            creationMenu
-                .presentationDetents([.height(460)])
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(22)
-                .presentationBackground(Loom.paper)
-        }
-        .sheet(isPresented: $showingHabit) {
-            HabitEditorSheet().environmentObject(appModel)
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(22)
-                .presentationBackground(Loom.paper)
-        }
-        .sheet(item: $composer) { kind in
-            RecordComposerSheet(kind: kind).environmentObject(appModel)
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(22)
-                .presentationBackground(Loom.paper)
+        .fullScreenCover(isPresented: $showingAgent) {
+            AgentScreen(coordinator: agent, draft: $agentDraft).environmentObject(appModel)
         }
     }
 
@@ -85,18 +86,18 @@ struct ContentView: View {
                 }
                 Button {
                     IdeaAudioController.stopAllPlayback()
-                    showingCreate = true
+                    showingAgent = true
                 } label: {
                     HStack(spacing: 8) {
-                        Image(systemName: "plus").font(.system(size: 18, weight: .light))
-                        Text("拾起").font(.system(size: 13, weight: .medium))
+                        Text("说一点").font(.system(size: 13, weight: .medium))
+                        Image(systemName: "arrow.up.right").font(.system(size: 11, weight: .medium))
                     }.foregroundStyle(Loom.paper)
-                        .frame(width: 110, height: 48).background(Loom.ink, in: ShuttleShape())
+                        .frame(width: 108, height: 48).background(Loom.ink, in: ShuttleShape())
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(StudioPressStyle())
-                .accessibilityLabel("拾起：新建文字、语音、链接或习惯")
-                .accessibilityIdentifier("global-create")
+                .accessibilityLabel("说一点，织进去：对话记录日常")
+                .accessibilityIdentifier("open-agent")
             }
         }
         .padding(.horizontal, 24).padding(.top, 12).padding(.bottom, 6)
@@ -105,55 +106,6 @@ struct ContentView: View {
         .sensoryFeedback(.selection, trigger: appModel.currentTab)
     }
 
-    private var creationMenu: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            LoomHeader(index: "CAPTURE / PICK UP A THREAD", title: "这一刻，留下什么？", subtitle: "一段话，一个声音，远处的一个链接。")
-                .padding(.bottom, 6)
-            creationOption("写下来", detail: "TEXT / 一点念头", symbol: "pencil.line", kind: .text, surface: .text)
-            creationOption("录一段", detail: "VOICE / 此刻的声音", symbol: "waveform", kind: .voice, surface: .voice)
-            creationOption("留链接", detail: "LINK / 通向别处", symbol: "arrow.up.right", kind: .link, surface: .link)
-            Button {
-                pendingCreation = .habit
-                showingCreate = false
-            } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "plus").font(.system(size: 17, weight: .light))
-                    Text("添加一根习惯的线").font(.system(size: 13, weight: .medium))
-                    Spacer()
-                    Image(systemName: "arrow.up.right").font(.system(size: 12))
-                }.foregroundStyle(Loom.ink).frame(height: 48).contentShape(Rectangle())
-            }.buttonStyle(StudioPressStyle()).padding(.top, 2)
-        }.padding(.horizontal, 24).padding(.top, 10).padding(.bottom, 20)
-    }
-
-    private func creationOption(_ title: String, detail: String, symbol: String, kind: ComposerKind, surface: MaterialSampleKind) -> some View {
-        Button { openComposer(kind) } label: {
-            HStack(spacing: 15) {
-                Image(systemName: symbol).font(.system(size: 20, weight: .light)).frame(width: 24)
-                Text(title).font(.system(size: 16, weight: .medium))
-                Spacer()
-                Text(detail).font(.system(size: 8, design: .monospaced))
-            }
-            .foregroundStyle(kind == .voice ? .white : Loom.ink)
-            .padding(.horizontal, 22).frame(height: 62)
-            .background(MaterialSampleSurface(kind: surface))
-            .contentShape(Rectangle())
-        }.buttonStyle(StudioPressStyle())
-    }
-
-    private func openComposer(_ kind: ComposerKind) {
-        IdeaAudioController.stopAllPlayback()
-        pendingCreation = .record(kind)
-        showingCreate = false
-    }
-    private func presentSelectedCreation() {
-        guard let destination = pendingCreation else { return }
-        pendingCreation = nil
-        switch destination {
-        case .habit: showingHabit = true
-        case .record(let kind): composer = kind
-        }
-    }
     private func title(for tab: AppTab) -> String {
         switch tab { case .dashboard: "今天"; case .habits: "习惯"; case .clips: "收集" }
     }
